@@ -1,8 +1,8 @@
-# The Wasserstein Distance Between Two Boltzmann Solutions Can Increase
+# Only Maxwell Molecules Contract the Wasserstein Distance Among Power-Law Boltzmann Kernels with Cutoff
 
 Deep Bhattacharjee
 
-For Maxwell molecules, Tanaka proved that the quadratic Wasserstein distance between two solutions of the spatially homogeneous Boltzmann equation never increases. Villani asked whether this remains true for other collision kernels. This paper shows that it does not: for every hard potential with angular cutoff, hard spheres included, there are smooth initial data for which the distance strictly increases. The proof is analytic and rests on an explicit Kantorovich dual certificate.
+Tanaka's theorem says that two Boltzmann solutions never move apart in the quadratic Wasserstein distance when the molecules are Maxwellian. This paper proves that this fails for every other power law with angular cutoff, −3 < γ ≤ 2, and for the Landau equation with hard potentials, answering Villani's question for these interactions.
 
-- `paper/`: LaTeX source (amsart, pdflatex), figure and PDF
-- `code/`: script that draws the figure; not used in any proof
+- `paper/`: LaTeX source (amsart, pdflatex), figures and PDF
+- `code/`: scripts that draw the figures; not used in any proof
