@@ -1,7 +1,7 @@
 {
   "title": "Only Maxwell Molecules Contract the Wasserstein Distance Among Power-Law Boltzmann Kernels with Cutoff",
   "upload_type": "software",
-  "description": "Tanaka's theorem says that two Boltzmann solutions never move apart in the quadratic Wasserstein distance when the molecules are Maxwellian. This paper proves that this fails for every other power law with angular cutoff, −3 < γ ≤ 2, and for the Landau equation with hard potentials, answering Villani's question for these interactions. LaTeX source and figure scripts.",
+  "description": "Tanaka's theorem says that two Boltzmann solutions never move apart in the quadratic Wasserstein distance when the molecules are Maxwellian. This paper proves that this fails for every other power law with angular cutoff, −3 < γ ≤ 2, for hard potentials without cutoff, and for the Landau equation with hard potentials, answering Villani's question for these interactions. LaTeX source and figure scripts.",
   "creators": [
     {
       "name": "Bhattacharjee, Deep",
