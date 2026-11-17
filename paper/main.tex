@@ -31,7 +31,7 @@
 \raggedbottom
 \begin{document}
 
-\title[Only Maxwell molecules contract $W_2$]{Only Maxwell Molecules Contract the Wasserstein Distance Among Power-Law Boltzmann Kernels with Cutoff}
+\title[Only Maxwell molecules contract $W_2$]{Only Maxwell Molecules Contract the Wasserstein Distance: Inverse-Power Forces, Hard Spheres and the Landau Equation}
 
 \author{Deep Bhattacharjee}
 \address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
@@ -42,7 +42,7 @@
 \urladdr{https://orcid.org/0000-0003-0466-750X}
 
 \begin{abstract}
-Tanaka's theorem says that two Boltzmann solutions never move apart in the quadratic Wasserstein distance when the molecules are Maxwellian. We prove that this fails for every other power law $|v-v_*|^\gamma$ with angular cutoff, $-3<\gamma\le2$, for hard potentials without cutoff, including every inverse-power force, and for the Landau equation with hard potentials, answering Villani's question for these interactions.
+Tanaka's theorem says that two Boltzmann solutions never move apart in the quadratic Wasserstein distance when the molecules are Maxwellian. We prove that this fails for every other power law $|v-v_*|^\gamma$, $\gamma>-3$, with bounded angular kernel, for every other inverse-power force without angular cutoff, and for the Landau equation with every non-Maxwellian power law, the Coulomb case included, answering Villani's question for these interactions.
 
 \medskip\noindent\textbf{Keywords:} Boltzmann equation; Wasserstein distance; Landau equation.
 
@@ -63,9 +63,9 @@ v'=\frac{v+v_*}{2}+\frac{|v-v_*|}{2}\,\sigma,\qquad v'_*=\frac{v+v_*}{2}-\frac{|
 \end{equation}
 describes a spatially uniform rarefied gas whose velocity distribution at time $t$ is $f(t,v)=f_t(v)$. Collisions conserve mass, momentum and kinetic energy. We consider the power-law kernels
 \begin{equation}\label{eq:kernel}
-B(z,\sigma)=|z|^\gamma\, b(k\cdot\sigma),\qquad k=\frac{z}{|z|},\qquad -3<\gamma\le 2,\quad \gamma\neq0,
+B(z,\sigma)=|z|^\gamma\, b(k\cdot\sigma),\qquad k=\frac{z}{|z|},\qquad \gamma>-3,\quad \gamma\neq0,
 \end{equation}
-where $b\ge0$ is measurable and not almost everywhere zero. Grad's angular cutoff is the condition\footnote{Kernels coming from inverse-power forces $|x|^{1-p}$, $p>3$, have $b(\cos\theta)\sin\theta\sim c\,\theta^{-1-\nu}$ with $\nu=2/(p-1)\in(0,1)$ as $\theta\to0$, because of grazing collisions; then $\int b=\infty$ but \eqref{eq:A1} holds. Hard potentials correspond to $p>5$.}
+where $b\ge0$ is measurable and not almost everywhere zero. Grad's angular cutoff is the condition\footnote{Kernels coming from inverse-power forces $|x|^{1-p}$, $p>2$, have $\gamma=(p-5)/(p-1)$ and $b(\cos\theta)\sin\theta\sim c\,\theta^{-1-\nu}$ with $\nu=2/(p-1)\in(0,2)$ as $\theta\to0$, because of grazing collisions; then $\int b=\infty$, \eqref{eq:A2} always holds, and \eqref{eq:A1} holds when $p>3$. Hard potentials correspond to $p>5$, Maxwell molecules to $p=5$, and $\gamma>-2$ to $p>7/3$.}
 \begin{equation}\label{eq:cutoff}
 \nb:=\int_{\Sph^2}b(k\cdot\sigma)\dd\sigma=2\pi\int_{-1}^{1}b(x)\dd x<\infty ,
 \end{equation}
@@ -73,7 +73,11 @@ and for hard potentials we shall only need the much weaker condition
 \begin{equation}\label{eq:A1}
 A_1:=\int_{\Sph^2}b(k\cdot\sigma)\,|k-\sigma|\dd\sigma<\infty ,
 \end{equation}
-which allows the angular singularity of every inverse-power interaction. For $\gamma<0$ we ask that $b$ be bounded, which implies \eqref{eq:cutoff}. Hard potentials are $\gamma>0$, hard spheres being $\gamma=1$ with constant $b$; soft potentials are $\gamma<0$. Maxwell molecules, $\gamma=0$, are the excluded case.
+and in Theorem~\ref{thm:C} only
+\begin{equation}\label{eq:A2}
+A_2:=\int_{\Sph^2}b(k\cdot\sigma)\,(1-k\cdot\sigma)\dd\sigma=\frac12\int_{\Sph^2}b(k\cdot\sigma)\,|k-\sigma|^2\dd\sigma<\infty ,
+\end{equation}
+which holds for every inverse-power force; note $A_2\le A_1$. In Theorem~\ref{thm:A}(ii) we ask that $b$ be bounded, which implies \eqref{eq:cutoff}. Hard potentials are $\gamma>0$, hard spheres being $\gamma=1$ with constant $b$; soft potentials are $\gamma<0$. Maxwell molecules, $\gamma=0$, are the excluded case.
 
 For two probability measures $\mu,\nu$ on $\RR^3$ with finite second moments,
 \[
@@ -83,7 +87,7 @@ the infimum running over couplings of $\mu$ and $\nu$. Tanaka discovered that fo
 
 After the proof with Imbert and Silvestre that the Fisher information decreases along \eqref{eq:B} for all physically relevant kernels \cite{ISV25}, which extended the Landau theorem of Guillen and Silvestre \cite{GS25}, Villani asked in the concluding section of his memoir \cite{Vil25} whether $W_2$ enjoys the same robustness: exponential stability is known for various kernels, but could the distance actually be nonincreasing? For the Landau equation with Maxwellian molecules contractivity holds, and for soft potentials a conditional stability estimate is known \cite{CDGT25}; for granular media Carrillo, McCann and Villani proved $W_2$ contraction under uniform convexity \cite{CMV05}.
 
-We answer the question in the negative for all the kernels \eqref{eq:kernel} with cutoff (and bounded $b$ if $\gamma<0$), for all hard potentials satisfying \eqref{eq:A1}, with or without cutoff, and for the Landau equation with hard potentials. Fix $e=(0,0,1)$ and a nonnegative even $\eta\in C_c^\infty(\RR^3)$ with $\int\eta=1$ and support in the closed unit ball. For $\delta>0$ and $\rho>0$ let $\eta_\delta(v)=\delta^{-3}\eta(v/\delta)$ and
+We answer the question in the negative for every kernel \eqref{eq:kernel} with $\gamma>-2$ and $A_2<\infty$, with or without cutoff, for every kernel with bounded $b$, for every inverse-power force other than the Maxwellian one, and for the Landau equation with every $\gamma\ge-3$ other than $\gamma=0$. Fix $e=(0,0,1)$ and a nonnegative even $\eta\in C_c^\infty(\RR^3)$ with $\int\eta=1$ and support in the closed unit ball. For $\delta>0$ and $\rho>0$ let $\eta_\delta(v)=\delta^{-3}\eta(v/\delta)$ and
 \begin{equation}\label{eq:data}
 j^\delta_\rho(v)=\tfrac12\big(\eta_\delta(v-\rho e)+\eta_\delta(v+\rho e)\big),
 \end{equation}
@@ -96,9 +100,9 @@ The second is the image of the first under the dilation $x\mapsto\lambda x$, so 
 \begin{gathered}\hB(y)=\vartheta(|y-se|^2)^4\,\vartheta(|y+se|^2)^4,\\ J=\int_{\Sph^2}b(e\cdot\sigma)\,\hB(s\sigma)\dd\sigma,\qquad I=\int_{\Sph^2}b(e\cdot\sigma)\,|\nabla\hB(s\sigma)|^2\dd\sigma,\end{gathered}
 \end{equation}
 \begin{equation}\label{eq:Gamma}
-\varepsilon_*=\min\Big\{\frac{(r^\gamma-s^\gamma)J}{\lambda r^\gamma I},\ \frac1{\lambda\|D^2\hB\|_\infty}\Big\},\qquad \Gamma=2^{\gamma-2}\,\varepsilon_*\,(r^\gamma-s^\gamma)\,J .
+\varepsilon_*=\min\Big\{\frac{(r^\gamma-s^\gamma)J}{\lambda r^\gamma I},\ \frac1{2\lambda\|D^2\hB\|_\infty}\Big\},\qquad \Gamma=2^{\gamma-2}\,\varepsilon_*\,(r^\gamma-s^\gamma)\,J .
 \end{equation}
-Since $\hB(s\sigma)>0$ for $\sigma\ne\pm e$ and $b$ is not almost everywhere zero, $J>0$, and $\Gamma>0$ as soon as $r^\gamma>s^\gamma$. Both integrals are finite under \eqref{eq:A1} (Section~\ref{sec:dual}).
+Since $\hB(s\sigma)>0$ for $\sigma\ne\pm e$ and $b$ is not almost everywhere zero, $J>0$, and $\Gamma>0$ as soon as $r^\gamma>s^\gamma$. Both integrals are finite under \eqref{eq:A2} (Section~\ref{sec:dual}).
 
 \begin{mainthm}\label{thm:A}
 Let $B$ be given by \eqref{eq:kernel}, let $r,s>0$ with $r^\gamma>s^\gamma$, and consider solutions $f$ and $g$ of \eqref{eq:B} with data \eqref{eq:pairdata}.
@@ -121,14 +125,30 @@ with $f_*=f(v_*)$, put $\theta_0=\vartheta(4s^2)$ and
 \hL(y)=\vartheta(|y-se|^2)\,\vartheta(|y+se|^2),\qquad
 \Gamma_L=8\,\varepsilon_L\theta_0 s^2\,2^\gamma\Big(\frac{r^\gamma}{1+\varepsilon_L\lambda\theta_0}-s^\gamma\Big),
 \end{equation}
-where $\varepsilon_L=\min\{(\lambda\|D^2\hL\|_\infty)^{-1},\ ((r/s)^\gamma-1)/(2\lambda\theta_0)\}$. For $r>s$ and $\gamma>0$ one checks that $\Gamma_L>0$ (Section~\ref{sec:landau}).
+where $\varepsilon_L=\min\{(2\lambda\|D^2\hL\|_\infty)^{-1},\ ((r/s)^\gamma-1)/(2\lambda\theta_0)\}$. Whenever $r^\gamma>s^\gamma$ one checks that $\Gamma_L>0$ (Section~\ref{sec:landau}).
 
 \begin{mainthm}\label{thm:B}
 Let $0<\gamma\le1$ and $r>s>0$, and let $f,g$ be weak solutions of \eqref{eq:L} in the sense of Desvillettes and Villani \cite{DV00} with data \eqref{eq:pairdata}. There is $t_1>0$ such that for every $t\in(0,t_1]$ there is $\delta_1(t)>0$ with $W_2(f_t,g_t)^2\ge W_2(f_0,g_0)^2+\frac14\Gamma_L\,t$ for all $\delta\in(0,\delta_1(t)]$.
 \end{mainthm}
 
+For the remaining kernels we use weak solutions, which need not be unique, and a certificate that is exact at time zero (Section~\ref{sec:exact}). Conservative weak solutions are defined in Definition~\ref{def:weak}; for $\gamma\le-2$ they are required to stay bounded in some $L^p$, $p>3/(5+\gamma)$.
+
+\begin{mainthm}\label{thm:C}
+Let $B$ be given by \eqref{eq:kernel} with $A_2<\infty$, and let $r,s>0$ with $r^\gamma>s^\gamma$. There is $\delta_1>0$ such that for every $\delta\in(0,\delta_1]$ and every pair $F,G$ of conservative weak solutions of \eqref{eq:B} with data \eqref{eq:pairdata} there is $t_1>0$ with
+\[
+W_2(F_t,G_t)^2\ \ge\ W_2(f_0,g_0)^2+\tfrac12\,\Gamma\,t\qquad(0\le t\le t_1).
+\]
+Such solutions exist for $\gamma>-2$ (Proposition~\ref{prop:exist}), for $-3<\gamma\le-2$ with $b$ bounded (Proposition~\ref{prop:local}), and for $-3<\gamma\le-2$ without cutoff whenever $b$ satisfies the hypotheses of Imbert, Silvestre and Villani \cite[Theorems~1.2 and~1.6]{ISV25}, which include the kernels of all inverse-power forces.\footnote{The global classical solutions of \cite[Theorem~1.6]{ISV25} have nonincreasing Fisher information $i(f)=\int|\nabla f|^2/f$ \cite[Theorem~1.2]{ISV25}, and Sobolev's inequality gives $\|f\|_{L^3}\le C\,i(f)$, so condition (b) of Definition~\ref{def:weak} holds with $p=3$; conditions (a) and (c) hold for these smooth, rapidly decaying solutions, by truncation of $b$ and Lemma~\ref{lem:conv}. For inverse-power kernels the hypothesis of \cite[Theorem~1.2]{ISV25} is checked there with the help of a numerical evaluation of the kernels \cite[Theorem~1.1 and Appendix~A]{ISV25}.}
+\end{mainthm}
+
+\begin{mainthm}\label{thm:D}
+Let $\gamma\ge-3$, $\gamma\ne0$, let $r,s>0$ with $r^\gamma>s^\gamma$, and put $c=\lambda/(1+\varepsilon_L\lambda\theta_0)$. There is $\delta_1>0$ such that for every $\delta\in(0,\delta_1]$ and every pair $F,G$ of conservative weak solutions of \eqref{eq:L} with data $f_0=j^\delta_r$, $g_0=j^{c\delta}_s$ there is $t_1>0$ with $W_2(F_t,G_t)^2\ge W_2(f_0,g_0)^2+\frac12\Gamma_L\,t$ for $0\le t\le t_1$. Such solutions exist for $\gamma>-2$ (Proposition~\ref{prop:exist}), and for $-3\le\gamma\le-2$, the Coulomb case $\gamma=-3$ included, the global classical solutions of Guillen and Silvestre \cite[Theorem~1.2]{GS25} are such solutions.\footnote{They conserve mass, momentum and energy, are bounded by a Maxwellian, take continuous initial data continuously \cite[Theorem~2.1]{GS25}, and have nonincreasing Fisher information \cite[Theorem~1.2]{GS25}, which bounds the $L^3$ norm through Sobolev's inequality; the weak form follows by integration by parts for $t>0$ and letting $t\to0$.}
+\end{mainthm}
+
+In Theorem~\ref{thm:D} the second jet is narrower, by the factor $1+\varepsilon_L\lambda\theta_0$, than the dilation of the first; this makes the pair of potentials optimal at time zero. Theorems~\ref{thm:C} and~\ref{thm:D} give up the time scales of Theorems~\ref{thm:A} and~\ref{thm:B}, which are explicit and independent of the solution, in exchange for insensitivity to the singularities of the kernel at grazing collisions and at small relative velocities.
+
 \begin{corollary}\label{cor:no}
-For every kernel \eqref{eq:kernel} with $0<\gamma\le2$ and $A_1<\infty$, with or without cutoff, for every kernel with $-3<\gamma<0$ and bounded $b$, and for the Landau equation with $0<\gamma\le1$, there are two smooth, compactly supported initial data with the same mass and momentum and solutions issued from them with $W_2(f_t,g_t)>W_2(f_0,g_0)$ for some $t>0$. Within the power laws $-3<\gamma\le2$ with cutoff (and $b$ bounded when $\gamma<0$), the map $t\mapsto W_2(f_t,g_t)$ is nonincreasing for all pairs of solutions exactly when $\gamma=0$.
+For every kernel \eqref{eq:kernel} with $\gamma>-2$ and $A_2<\infty$, with or without cutoff, for every kernel with $-3<\gamma\le-2$ and bounded $b$, for every inverse-power force other than the Maxwellian one, and for the Landau equation with $\gamma\ge-3$, $\gamma\ne0$, there are two smooth, compactly supported initial data with the same mass and momentum and solutions issued from them with $W_2(f_t,g_t)>W_2(f_0,g_0)$ for some $t>0$. Within the power laws $|v-v_*|^\gamma$, $\gamma>-3$, with bounded angular kernel, the map $t\mapsto W_2(f_t,g_t)$ is nonincreasing for all pairs of solutions exactly when $\gamma=0$.
 \end{corollary}
 
 The mechanism is a clock mismatch. A pair of opposite jets of speed $\rho$ collides head-on at relative speed $2\rho$, and each such collision sends the two particles to opposite points $\pm\rho\sigma$ of the sphere of radius $\rho$ (Figure~\ref{fig:jets}). The two gases \eqref{eq:pairdata} have the same geometry, but the jets of speed $\rho$ are destroyed at a rate proportional to $\rho^\gamma$ (Figure~\ref{fig:rates}). At time zero the dilation $x\mapsto\lambda x$ is an optimal transport between them. A moment later one gas has spread more of its mass over its sphere than the other, and the dilation is no longer optimal: part of the surplus must be carried back to the poles. In the language of scaling (Remark~\ref{rem:maxwell}), $g_t$ is the dilation of $f_{\lambda^\gamma t}$, and only for $\gamma=0$ do the two clocks agree.
@@ -145,7 +165,7 @@ The mechanism is a clock mismatch. A pair of opposite jets of speed $\rho$ colli
 \caption{Jet-loss rates $\rho^\gamma$. For $\gamma>0$ the faster jets $\pm re$ break up first; for $\gamma<0$ the slower jets $\pm se$ do. Only for Maxwell molecules are the rates equal, and only then does the dilation remain an optimal transport.}\label{fig:rates}
 \end{figure}
 
-The proof uses Kantorovich duality in its elementary direction\footnote{If $\varphi(x)+\psi(y)\le|x-y|^2$ for all $x,y$, then integrating against any coupling $\pi$ of $\mu$ and $\nu$ gives $\iint|x-y|^2\dd\pi\ge\int\varphi\dd\mu+\int\psi\dd\nu$. No existence of optimal maps or potentials is needed.}: any pair with $\varphi(x)+\psi(y)\le|x-y|^2$ gives $W_2(\mu,\nu)^2\ge\int\varphi\dd\mu+\int\psi\dd\nu$. We perturb the dilation potentials so as to reward the slower gas for keeping its mass at the poles (Section~\ref{sec:dual}, Figure~\ref{fig:cert}), compute the first variation of the reward exactly in the limit of thin jets (Section~\ref{sec:weak}), and control the error by a short-time expansion. For hard potentials the error is controlled by moments and by the cancellation of grazing collisions, uniformly in the angular cutoff, which gives the kernels without cutoff as limits (Section~\ref{sec:hard}). For soft potentials the collision rate inside a jet of width $\delta$ is of order $\delta^\gamma$, which is large; we prove a local theory in norms adapted to the width (Appendix~\ref{app:soft}) and let the time shrink with $\delta$ (Section~\ref{sec:soft}). For the Landau equation collisions are grazing and the first variation sees only second derivatives at the jets, so the certificate must be smooth and curved at the poles (Section~\ref{sec:landau}, Appendix~\ref{app:smooth}).
+The proof uses Kantorovich duality in its elementary direction\footnote{If $\varphi(x)+\psi(y)\le|x-y|^2$ for all $x,y$, then integrating against any coupling $\pi$ of $\mu$ and $\nu$ gives $\iint|x-y|^2\dd\pi\ge\int\varphi\dd\mu+\int\psi\dd\nu$. No existence of optimal maps or potentials is needed.}: any pair with $\varphi(x)+\psi(y)\le|x-y|^2$ gives $W_2(\mu,\nu)^2\ge\int\varphi\dd\mu+\int\psi\dd\nu$. We perturb the dilation potentials so as to reward the slower gas for keeping its mass at the poles (Section~\ref{sec:dual}, Figure~\ref{fig:cert}), compute the first variation of the reward exactly in the limit of thin jets (Section~\ref{sec:weak}), and control the error by a short-time expansion. For hard potentials the error is controlled by moments and by the cancellation of grazing collisions, uniformly in the angular cutoff, which gives the kernels without cutoff as limits (Section~\ref{sec:hard}). For soft potentials the collision rate inside a jet of width $\delta$ is of order $\delta^\gamma$, which is large; we prove a local theory in norms adapted to the width (Appendix~\ref{app:soft}) and let the time shrink with $\delta$ (Section~\ref{sec:soft}). For the Landau equation collisions are grazing and the first variation sees only second derivatives at the jets, so the certificate must be smooth and curved at the poles (Section~\ref{sec:landau}, Appendix~\ref{app:smooth}). For Theorems~\ref{thm:C} and~\ref{thm:D} the certificate vanishes, or for the Landau equation coincides with a collision invariant, on fixed neighbourhoods of the jets. The initial pair of potentials is then optimal, collisions inside a jet are invisible, and the first variation is continuous along any weak solution; the weak solutions for $\gamma>-2$ come from moment estimates that depend on the angular kernel only through $A_2$ (Section~\ref{sec:exact}, Appendix~\ref{app:bounded}). For the distance to equilibrium we reduce the question near the Maxwellian to the sign of a quadratic form, which is nonpositive for Maxwell molecules (Proposition~\ref{prop:eq}).
 
 \section{Weak form and the thin-jet limit}\label{sec:weak}
 
@@ -159,7 +179,7 @@ with $L_\varphi(v,v)=0$, and for a finite nonnegative measure $\mu$ for which th
 \end{equation}
 The integral in \eqref{eq:Lphi} converges absolutely when $\nb<\infty$ and $\varphi$ is bounded, and also when $A_1<\infty$ and $\varphi$ has a bounded gradient, because $v'-v=v_*-v'_*=\frac12|v-v_*|(\sigma-k)$. When $\nb<\infty$, $\mu=f\dd v$ and $\iint|v-v_*|^\gamma f f_*<\infty$, the involution $(v,v_*,\sigma)\mapsto(v',v'_*,k)$, which has unit Jacobian and preserves $B$, gives the weak form $\int\varphi\,Q(f,f)\dd v=\Lambda_\varphi(f)$ \cite[Chap.~1]{Vil02}.
 
-\emph{Symmetrisation.} Under $\sigma\mapsto-\sigma$ the velocities $v',v'_*$ are exchanged and $k\cdot\sigma$ changes sign. Hence $Q(f,f)$, $L_\varphi$ and $\nb$ do not change if $b(x)$ is replaced by $(b(x)+b(-x))\mathbf 1_{x\ge0}$, and neither do $J$ and $I$, because $\hB(s\sigma)$ is even in $\sigma$. We assume from now on that $b$ vanishes on $[-1,0)$. This leaves $\nb$ unchanged and at most doubles $\nbi$ and $A_1$; for $A_1$, the substitution $\sigma\mapsto-\sigma$ turns $\int_{k\cdot\sigma>0}b(-k\cdot\sigma)|k-\sigma|\dd\sigma$ into $\int_{k\cdot\sigma<0}b(k\cdot\sigma)|k+\sigma|\dd\sigma$, and $|k+\sigma|\le\sqrt2\le|k-\sigma|$ where $k\cdot\sigma\le0$.
+\emph{Symmetrisation.} Under $\sigma\mapsto-\sigma$ the velocities $v',v'_*$ are exchanged and $k\cdot\sigma$ changes sign. Hence $Q(f,f)$, $L_\varphi$ and $\nb$ do not change if $b(x)$ is replaced by $(b(x)+b(-x))\mathbf 1_{x\ge0}$, and neither do $J$ and $I$, because $\hB(s\sigma)$ is even in $\sigma$. We assume from now on that $b$ vanishes on $[-1,0)$. This leaves $\nb$ unchanged, does not increase $A_2$ (because $1+k\cdot\sigma\le1-k\cdot\sigma$ where $k\cdot\sigma\le0$), and at most doubles $\nbi$ and $A_1$; for $A_1$, the substitution $\sigma\mapsto-\sigma$ turns $\int_{k\cdot\sigma>0}b(-k\cdot\sigma)|k-\sigma|\dd\sigma$ into $\int_{k\cdot\sigma<0}b(k\cdot\sigma)|k+\sigma|\dd\sigma$, and $|k+\sigma|\le\sqrt2\le|k-\sigma|$ where $k\cdot\sigma\le0$.
 
 \begin{lemma}\label{lem:cont}
 For bounded continuous $\varphi$, the function $L_\varphi$ is continuous on $\{v\ne v_*\}$ and $|L_\varphi(v,v_*)|\le4\|\varphi\|_\infty\nb|v-v_*|^\gamma$. If $\gamma>0$, then $L_\varphi$ is continuous on $\RR^3\times\RR^3$ and $|L_\varphi(v,v_*)|\le4\|\varphi\|_\infty\nb\jb{v}^\gamma\jb{v_*}^\gamma$.
@@ -281,7 +301,7 @@ W_2(f_t,g_t)^2\ge(1-\lambda)E+\Big(1-\frac1\lambda\Big)\lambda^2E+\int\tilde\var
 The first two terms equal $W_2(f_0,g_0)^2$. Finally $\int\tilde\varphi_\varepsilon f_0\ge0$ and $\int\tilde\psi_\varepsilon g_0=-\varepsilon\int hg_0$.
 \end{proof}
 
-For the Boltzmann equation we take $h=\hB$ from \eqref{eq:J}. It is smooth and even, takes values in $[0,1)$, has bounded derivatives of all orders, vanishes exactly at $\pm se$, and $\hB(y)\le|y\mp se|^8$ because $\vartheta(\tau)\le\min\{\tau,1\}$. Its gradient vanishes to seventh order at $\pm se$, so $|\nabla\hB(s\sigma)|\le C_s\min\{|\sigma-e|,|\sigma+e|\}$; since $b$ vanishes for $e\cdot\sigma<0$, where $|\sigma+e|<|\sigma-e|$, this gives $I\le4C_s^2A_1$ and $J\le2^7s^8A_1$, so both are finite under \eqref{eq:A1}. Since $g_0$ is supported within $\lambda\delta$ of $\pm se$,
+For the Boltzmann equation we take $h=\hB$ from \eqref{eq:J}. It is smooth and even, takes values in $[0,1)$, has bounded derivatives of all orders, vanishes exactly at $\pm se$, and $\hB(y)\le|y\mp se|^8$ because $\vartheta(\tau)\le\min\{\tau,1\}$. Its gradient vanishes to seventh order at $\pm se$, so $|\nabla\hB(s\sigma)|\le C_s\min\{|\sigma-e|,|\sigma+e|\}$; since $b$ vanishes for $e\cdot\sigma<0$, where $|\sigma+e|<|\sigma-e|$, this gives $I\le4C_s^2A_1$ and $J\le2^7s^8A_1$. Also $|\sigma-e|^2=2(1-e\cdot\sigma)$, so $I\le2C_s^2A_2$ and $J\le16s^8A_2$, and both are finite under \eqref{eq:A2}. Since $g_0$ is supported within $\lambda\delta$ of $\pm se$,
 \begin{equation}\label{eq:deficitB}
 \varepsilon\int\hB\, g_0\le\varepsilon(\lambda\delta)^8 .
 \end{equation}
@@ -486,6 +506,206 @@ W_2(f_t,g_t)^2-W_2(f_0,g_0)^2\ \ge\ t\big(\Lambda^L_{\tilde\varphi}(f_0)+\Lambda
 With $t_1=\min\{1,\Gamma_L/(4C_4K^3)\}$, $t\le t_1$, and $\delta_1(t)$ chosen so that the gain is at least $\frac34\Gamma_L$ and $\varepsilon(\lambda\delta)^2\le\frac14t\Gamma_L$, the right-hand side is at least $\frac14\Gamma_Lt$.
 \end{proof}
 
+\section{Weak solutions and exact certificates}\label{sec:exact}
+
+The proofs of Theorems~\ref{thm:A} and~\ref{thm:B} control the first variation of the dual functional by a short-time expansion whose error is uniform in the width $\delta$ of the jets. Theorems~\ref{thm:C} and~\ref{thm:D} rest instead on the continuity of the first variation along a fixed solution. This needs two things: the pair of potentials must be optimal at time zero, so that nothing is lost at $t=0$, and the first variation must depend continuously on time along every weak solution. The first is achieved by certificates that vanish, or for the Landau equation coincide with a collision invariant, on fixed neighbourhoods of the jets; the second by a weak formulation that needs only $A_2<\infty$.
+
+\subsection{The weak form without cutoff}
+Assume $A_2<\infty$, with $b$ symmetrised as in Section~\ref{sec:weak}. Since $b(k\cdot\sigma)$ depends only on $k\cdot\sigma$, the vector $\int b(k\cdot\sigma)(\sigma-k)\dd\sigma$ is parallel to $k$, and its component along $k$ is $-A_2$. For $\varphi\in C^2_b$, $z=v-v_*\ne0$ and $u=v'-v=\frac12|z|(\sigma-k)$ we therefore put
+\begin{equation}\label{eq:LphiA2}
+L_\varphi(v,v_*)=|z|^\gamma\Big(\int_{\Sph^2}b(k\cdot\sigma)\big(\Delta_\varphi-(\nabla\varphi(v)-\nabla\varphi(v_*))\cdot u\big)\dd\sigma-\tfrac12A_2\big(\nabla\varphi(v)-\nabla\varphi(v_*)\big)\cdot z\Big),
+\end{equation}
+where $\Delta_\varphi=\varphi(v')+\varphi(v'_*)-\varphi(v)-\varphi(v_*)$, and $L_\varphi(v,v)=0$. Taylor's formula at $v$ and at $v_*$, with $v'_*-v_*=-u$, gives
+\begin{equation}\label{eq:taylor2}
+\big|\Delta_\varphi-(\nabla\varphi(v)-\nabla\varphi(v_*))\cdot u\big|\le\|D^2\varphi\|_\infty|u|^2=\tfrac12\|D^2\varphi\|_\infty|z|^2(1-k\cdot\sigma),
+\end{equation}
+so the integral in \eqref{eq:LphiA2} converges absolutely. When $A_1<\infty$ the two parts of the integrand are separately integrable and \eqref{eq:LphiA2} coincides with \eqref{eq:Lphi}.\footnote{This is the usual way of giving a meaning to the collision operator without cutoff: the first-order part of $\Delta_\varphi$ is odd in the azimuth of $\sigma$ about $k$, and only its average survives.}
+
+\begin{lemma}\label{lem:conv}
+Let $\gamma>-3$, $A_2<\infty$ and $\varphi\in C^2_b$.
+\begin{enumerate}
+\item[(i)] $L_\varphi$ is continuous on $\{v\ne v_*\}$ and $|L_\varphi(v,v_*)|\le A_2\|D^2\varphi\|_\infty|v-v_*|^{\gamma+2}$. If $\gamma>-2$, $L_\varphi$ is continuous on $\RR^3\times\RR^3$.
+\item[(ii)] Let $\gamma>-2$, let $\Phi_n(\rho)=\min\{\rho^\gamma,n\}$ if $\gamma<0$ and $\Phi_n(\rho)=\min\{\rho,n\}^\gamma$ if $\gamma>0$, let $b_n=\min\{b,n\}$, and let $L^n_\varphi$ be built on $\Phi_n(|z|)b_n$. Then $L^n_\varphi\to L_\varphi$ locally uniformly on $\RR^3\times\RR^3$.
+\item[(iii)] Let $\gamma>-2$, $\varphi\in C^3_b$, $b^{(n)}=\frac{8n^2}\pi\mathbf 1_{[1-1/n,1]}$ and let $L^{(n)}_\varphi$ be built on $\Phi_n(|z|)b^{(n)}$. Then $L^{(n)}_\varphi\to K_\varphi$ locally uniformly on $\RR^3\times\RR^3$, with $K_\varphi$ from \eqref{eq:weakL}.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) The bound follows from \eqref{eq:taylor2} and $|\nabla\varphi(v)-\nabla\varphi(v_*)|\le\|D^2\varphi\|_\infty|z|$. For continuity off the diagonal we argue as in Lemma~\ref{lem:cont}: after the substitution $\sigma=R_n\omega$ the integrands converge pointwise and are dominated by $\frac12\|D^2\varphi\|_\infty|z_n|^2(1-k\cdot\omega)b(k\cdot\omega)$, which is integrable. If $\gamma>-2$ the bound gives continuity on the diagonal.
+
+(ii) Every $b_n$ is bounded, and $A_2(b_n)\le A_2$. Let $L^{[\beta]}_\varphi$ denote the right-hand side of \eqref{eq:LphiA2} without the factor $|z|^\gamma$ and with $\beta$ in place of $b$; it is linear in $\beta$. Then $L^n_\varphi-L_\varphi=(\Phi_n-|z|^\gamma)L^{[b_n]}_\varphi+|z|^\gamma L^{[b_n-b]}_\varphi$, and \eqref{eq:taylor2} gives
+\[
+|L^n_\varphi-L_\varphi|\le\|D^2\varphi\|_\infty|z|^2\Big(A_2\big|\Phi_n(|z|)-|z|^\gamma\big|+|z|^\gamma\int(b-b_n)(k\cdot\sigma)(1-k\cdot\sigma)\dd\sigma\Big).
+\]
+The integral does not depend on $k$ and tends to $0$ by dominated convergence. For $\gamma>0$, $\Phi_n=\rho^\gamma$ on $\rho\le n$; for $-2<\gamma<0$, $\Phi_n=\rho^\gamma$ on $\rho\ge n^{1/\gamma}$, and on $\rho<n^{1/\gamma}$ the first term is at most $A_2\rho^{\gamma+2}\le A_2n^{(\gamma+2)/\gamma}\to0$.
+
+(iii) We have $A_2(b^{(n)})=2\pi\int_{1-1/n}^1\frac{8n^2}\pi(1-x)\dd x=8$. Write $\sigma=xk+(1-x^2)^{1/2}\tau$ with $\tau\perp k$ a unit vector, and $S=D^2\varphi(v)+D^2\varphi(v_*)$. Taylor's formula to third order gives $\Delta_\varphi=(\nabla\varphi(v)-\nabla\varphi(v_*))\cdot u+\frac12u^{\top}Su+R$ with $|R|\le\frac13\|D^3\varphi\|_\infty|u|^3$. Averaging over $\tau$, $u$ becomes $\frac12|z|(x-1)k$ and $u\otimes u$ becomes $\frac14|z|^2\big((1-x)^2k\otimes k+\frac12(1-x^2)(I-k\otimes k)\big)$. On the support of $b^{(n)}$ we have $\int b^{(n)}(1-x)^2\le8/n$, $\int b^{(n)}(1-x)^{3/2}\le8n^{-1/2}$ and $8-4/n\le\frac12\int b^{(n)}(1-x^2)\le8$. Hence
+\[
+\int b^{(n)}\Delta_\varphi\dd\sigma=-4\big(\nabla\varphi(v)-\nabla\varphi(v_*)\big)\cdot z+|z|^2(I-k\otimes k):S+E_n,\qquad|E_n|\le\frac{C\|\varphi\|_{C^3}}{\sqrt n}\big(|z|^2+|z|^3\big).
+\]
+Multiplying by $|z|^\gamma$ and recalling $a(z)=|z|^{\gamma+2}(I-k\otimes k)$ and $2\beta(z)=-4|z|^\gamma z$, the main terms give $K_\varphi(v,v_*)$. The factor $\Phi_n$ in place of $|z|^\gamma$ is handled as in (ii), using $|\int b^{(n)}\Delta_\varphi|\le8\|D^2\varphi\|_\infty|z|^2$.
+\end{proof}
+
+\subsection{Conservative weak solutions}
+Let $\ell_\varphi$ stand for $L_\varphi$ from \eqref{eq:LphiA2} when we speak of \eqref{eq:B}, and for $K_\varphi$ from \eqref{eq:weakL} when we speak of \eqref{eq:L}, and let $\Lambda_\varphi(\mu)=\frac12\iint\ell_\varphi\dd\mu\dd\mu$.
+
+\begin{definition}\label{def:weak}
+Let $T>0$, and let $\gamma>-3$ and $A_2<\infty$ for \eqref{eq:B}, $\gamma\ge-3$ for \eqref{eq:L}. A family $(F_t)_{0\le t\le T}$ of probability measures on $\RR^3$ is a \emph{conservative weak solution} if
+\begin{enumerate}
+\item[(a)] $t\mapsto F_t$ is weakly continuous, and $\int v\dd F_t$ and $\int|v|^2\dd F_t$ do not depend on $t$;
+\item[(b)] if $\gamma>0$, then $\sup_tM_q(F_t)<\infty$ for some $q>\gamma+2$; if $\gamma\le-2$, then $F_t$ has a density and $\sup_t\|F_t\|_{L^p}<\infty$ for some $p>3/(5+\gamma)$;
+\item[(c)] $\int\varphi\dd F_t=\int\varphi\dd F_0+\int_0^t\Lambda_\varphi(F_\tau)\dd\tau$ for every $\varphi\in C^2_b$ and $t\in[0,T]$.
+\end{enumerate}
+\end{definition}
+
+The solutions used in Theorem~\ref{thm:A} are of this kind: the solutions of \cite{MW99} and those of Lemma~\ref{lem:limit} have bounded sixth moments, and the solutions of Proposition~\ref{prop:local} are bounded.
+
+\begin{lemma}\label{lem:tau}
+Let $F$ be a conservative weak solution on $[0,T]$ and $\varphi\in C^2_b$. Then $\Lambda_\varphi(F_\tau)$ converges absolutely and depends continuously on $\tau\in[0,T]$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:conv}(i) and Lemma~\ref{lem:K}, $\ell_\varphi$ is continuous off the diagonal and $|\ell_\varphi(v,w)|\le C_\varphi|v-w|^{\gamma+2}$. Let $\tau_n\to\tau$, so that $F_{\tau_n}\otimes F_{\tau_n}\rightharpoonup F_\tau\otimes F_\tau$. For $0<\eta<1<R$ split $\ell_\varphi$ into its parts on $\{|z|<\eta\}$, $\{\eta\le|z|\le R\}$ and $\{|z|>R\}$, smoothing the cut-offs. The middle part is bounded and continuous, so its integrals converge. On $\{|z|>R\}$, $|\ell_\varphi|\le C_\varphi R^{\gamma}|z|^2$ if $\gamma<0$ and $|\ell_\varphi|\le C_\varphi R^{\gamma+2-q}|z|^q$ if $\gamma>0$; by (a) and (b) the integrals of these over $F_{\tau'}\otimes F_{\tau'}$ are small uniformly in $\tau'$ once $R$ is large. On $\{|z|<\eta\}$: if $\gamma>-2$, $|\ell_\varphi|\le C_\varphi\eta^{\gamma+2}$; if $\gamma\le-2$, Hölder's inequality gives
+\[
+\iint_{|v-w|<\eta}|\ell_\varphi|\dd F_{\tau'}\dd F_{\tau'}\le C_\varphi\sup_v\int_{|v-w|<\eta}|v-w|^{\gamma+2}F_{\tau'}(w)\dd w\le C_\varphi\|F_{\tau'}\|_{L^p}\big\||u|^{\gamma+2}\big\|_{L^{p'}(|u|<\eta)},
+\]
+and the last norm tends to zero with $\eta$ because $(\gamma+2)p'>-3$ exactly when $p>3/(5+\gamma)$. The same bounds give absolute convergence.
+\end{proof}
+
+\subsection{Moments and existence for $\gamma>-2$}
+The approximating equations have bounded kernels, for which the classical theory is recalled in Appendix~\ref{app:bounded}: global solutions conserve mass, momentum and energy, keep every moment finite and satisfy the weak form for continuous test functions of polynomial growth. The following Povzner-type estimates depend on the angular kernel only through $A_2$.
+
+\begin{lemma}\label{lem:povzner}
+Let $B=\Phi(|z|)\,\tilde b(k\cdot\sigma)$ with $0\le\Phi(\rho)\le\min\{\rho^\gamma,C\}$ and $\tilde b\le C$ vanishing on $[-1,0)$, let $\int\tilde b(k\cdot\sigma)(1-k\cdot\sigma)\dd\sigma\le A$, and let $f$ be the solution of \eqref{eq:B} with kernel $B$ and data with finite moments of every order.
+\begin{enumerate}
+\item[(a)] If $-2\le\gamma<0$, then $M_6(f_t)\le M_6(f_0)\,e^{3At}$ for all $t\ge0$.
+\item[(b)] If $\gamma>0$ and $p\ge\max\{2,\gamma/2\}$, then $\frac{\dd}{\dd t}M_{2p}(f_t)\le C_*M_{2p}(f_t)^2$ with $C_*=p^2A\,2^{p+\gamma}\kappa_p^{-p-\gamma/2}$, $\kappa_p=(20p^2\,1.1^p)^{-1/2}$. Hence $M_{2p}(f_t)\le2M_{2p}(f_0)$ for $t\le(2C_*M_{2p}(f_0))^{-1}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) The proof of Lemma~\ref{lem:moments} shows that the integral of the bracket for $\jb{v}^6$ against $\tilde b$ equals $3E|z|^2(\frac12|w_\perp|^2-(w\cdot k)^2)c_{\tilde b}$, with $E=\jb{v}^2+\jb{v_*}^2$, $w=\frac12(v+v_*)$ and $c_{\tilde b}=\int\tilde b(1-(k\cdot\sigma)^2)\le2A$. Since $v\times v_*=z\times w$, we have $|z|^2|w_\perp|^2=|v\times v_*|^2$, and $|v\times v_*|\le\min\{|z||w|,|v||v_*|\}$. Hence, with $-\gamma\ge0$ and $2+\gamma\ge0$,
+\[
+|z|^\gamma|v\times v_*|^2\le(|z||w|)^{-\gamma}|z|^\gamma(|v||v_*|)^{2+\gamma}=|w|^{-\gamma}(|v||v_*|)^{2+\gamma}\le\jb{v}^2\jb{v_*}^2,
+\]
+because $|w|\le\jb{v}\jb{v_*}$. So the integrand of $\Lambda_{\jb{v}^6}$ is at most $3A(\jb{v}^4\jb{v_*}^2+\jb{v}^2\jb{v_*}^4)$, and $\frac{\dd}{\dd t}M_6\le3AM_4M_2\le3AM_6$, by Hölder's inequality for the probability $f_t$.
+
+(b) Let $X=\jb{v}^2$, $Y=\jb{v_*}^2$, $E=X+Y$, $\alpha=w\cdot z$ and $\varpi=|v\times v_*|$. From $v'=w+\frac12|z|\sigma$ we get $\jb{v'}^2=\frac E2+s_\sigma$ and $\jb{v'_*}^2=\frac E2-s_\sigma$ with $s_\sigma=|z|\,w\cdot\sigma$, and $s_k=\alpha$. Writing $\sigma=xk+(1-x^2)^{1/2}(\cos\phi\,e_1+\sin\phi\,e_2)$, with $e_1$ along the component of $w$ orthogonal to $k$, we have $s_\sigma=\alpha x+\varpi(1-x^2)^{1/2}\cos\phi$. Put $H(s)=(\frac E2+s)^p+(\frac E2-s)^p$; the bracket for $\jb{v}^{2p}$ is $H(s_\sigma)-H(\alpha)$. On $|s|\le\frac E2$, $|H'|\le2pE^{p-1}$ and $0\le H''\le2p(p-1)E^{p-2}$, because $p\ge2$. Taylor's formula at $\alpha x$, averaged in $\phi$, gives
+\begin{equation}\label{eq:pov1}
+0\le\langle H(s_\sigma)\rangle_\phi-H(\alpha x)\le\tfrac12p(p-1)E^{p-2}\varpi^2(1-x^2).
+\end{equation}
+Since $|\alpha|,\varpi\le|w||z|\le\frac E2$, this yields $|\langle H(s_\sigma)\rangle_\phi-H(\alpha)|\le pE^p(1-x)+\frac18p(p-1)E^p(1-x^2)\le p^2E^p(1-x)$, so that
+\begin{equation}\label{eq:pov2}
+\Big|\int\tilde b\,\big(H(s_\sigma)-H(\alpha)\big)\dd\sigma\Big|\le p^2AE^p .
+\end{equation}
+Now let $|v|\ge5$ and $|v_*|\le\kappa_p|v|$. Then $Y\le\frac1{10}X$, $E\le1.1X$ and $\varpi\le|v||v_*|\le\kappa_pX$. Put $\mu=\frac12(1-x)\in[0,\frac12]$ and $\mathsf b=Y/X$; since $\alpha=\frac12(X-Y)$,
+\[
+H(\alpha)-H(\alpha x)=X^p\,\psi(\mu),\qquad\psi(\mu)=1+\mathsf b^p-\big(1-\mu(1-\mathsf b)\big)^p-\big(\mathsf b+\mu(1-\mathsf b)\big)^p .
+\]
+The function $\psi$ is concave, $\psi(0)=0$ and $\psi(\frac12)=1+\mathsf b^p-2(\frac{1+\mathsf b}2)^p\ge1-2(0.55)^2>\frac14$, so $\psi(\mu)\ge\frac\mu2\ge\frac18(1-x^2)$. With \eqref{eq:pov1},
+\[
+\langle H(s_\sigma)\rangle_\phi-H(\alpha)\le(1-x^2)\Big(\tfrac12p(p-1)(1.1X)^{p-2}\kappa_p^2X^2-\tfrac18X^p\Big)\le0 .
+\]
+Thus the integrand of $\Lambda_{\jb{v}^{2p}}$ is nonpositive on this region and on its mirror image. On the remaining set, $\min\{X,Y\}\ge\kappa_p^2\max\{X,Y\}$ (if both speeds are below $5$, because $X,Y\in[1,26]$), so $E\le2\kappa_p^{-1}(XY)^{1/2}$ and $|z|^\gamma\le2^\gamma\max\{X,Y\}^{\gamma/2}\le2^\gamma\kappa_p^{-\gamma/2}(XY)^{\gamma/4}$. By \eqref{eq:pov2} the integrand is there at most $2C_*(XY)^{p/2+\gamma/4}\le2C_*(XY)^p$, using $\gamma\le2p$. Integrating against $\frac12f_tf_{t*}$ gives the claim.
+\end{proof}
+
+\begin{proposition}\label{prop:exist}
+Let $\gamma>-2$, $\gamma\ne0$, and let $f_0$ be a probability density with finite moments of every order. Put $q=6$ if $\gamma<0$ and $q=2p$ with $p=\max\{3,\gamma/2+2\}$ if $\gamma>0$. For \eqref{eq:B} with $A_2<\infty$, and for \eqref{eq:L}, there are $T>0$ and a conservative weak solution $F$ on $[0,T]$ with $F_0=f_0$ and $\sup_tM_q(F_t)<\infty$. For $\gamma<0$, $T$ may be taken arbitrary.
+\end{proposition}
+
+\begin{proof}
+Let $f^n$ be the solution of \eqref{eq:B} with kernel $\Phi_n(|z|)\min\{b,n\}$ when we treat \eqref{eq:B}, and with kernel $\Phi_n(|z|)b^{(n)}$ when we treat \eqref{eq:L}, notation of Lemma~\ref{lem:conv}. These kernels are bounded, $\Phi_n\le\rho^\gamma$, and $A_2(\min\{b,n\})\le A_2$, $A_2(b^{(n)})=8$. Lemma~\ref{lem:povzner} gives $T>0$ and $K$ with $M_q(f^n_t)\le K$ for $t\le T$ and all $n$; for $\gamma<0$, $T$ is arbitrary. By Lemma~\ref{lem:conv}, $|L^n_\varphi(v,w)|\le C\|D^2\varphi\|_\infty|v-w|^{\gamma+2}\le C'\|D^2\varphi\|_\infty(\jb{v}\jb{w})^{q'}$ with $q'=\max\{2,\gamma+2\}<q$, so $|\int\varphi f^n_t-\int\varphi f^n_{t'}|\le C''\|\varphi\|_{C^2}K^2|t-t'|$. As in the proof of Lemma~\ref{lem:limit}, a diagonal subsequence converges weakly for every $t\in[0,T]$ to a weakly continuous family $F_t$ with $M_q(F_t)\le K$, and mass, momentum and energy pass to the limit because $q>2$. For $\varphi\in C^2_b$ (Boltzmann) or $\varphi\in C^3_b$ (Landau), Lemma~\ref{lem:conv} gives locally uniform convergence of $L^n_\varphi$ to the continuous function $\ell_\varphi$, with the uniform bound above, of degree $q'<q$ in each variable; hence $\Lambda^n_\varphi(f^n_\tau)\to\Lambda_\varphi(F_\tau)$ boundedly, and the weak form passes to the limit. For the Landau equation and $\varphi\in C^2_b$, mollify: $\varphi_k=\varphi*\rho_k\in C^3_b$ has $\|\varphi_k\|_{C^2}\le\|\varphi\|_{C^2}$, $\nabla\varphi_k\to\nabla\varphi$ and $D^2\varphi_k\to D^2\varphi$ locally uniformly, so $K_{\varphi_k}\to K_\varphi$ locally uniformly with the bound of Lemma~\ref{lem:K}, and the weak form for $\varphi$ follows.
+\end{proof}
+
+\subsection{Matched data and flat certificates}
+
+\begin{lemma}\label{lem:matched}
+Let $h\ge0$ be smooth with bounded derivatives of all orders, $0<\varepsilon\le(\lambda\|D^2h\|_\infty)^{-1}$, let $y(z)$ be the minimiser in \eqref{eq:pair} (Appendix~\ref{app:smooth}) and $T(x)=y(\lambda x)$. Let $f_0$ be a probability measure with finite second moment and $g_0=T_\#f_0$. Then $W_2(f_0,g_0)^2=\int\varphi_\varepsilon\dd f_0+\int\psi_\varepsilon\dd g_0$, and for any families $F,G$ of probability measures that start from $f_0,g_0$ and conserve energy,
+\[
+W_2(F_t,G_t)^2-W_2(f_0,g_0)^2\ge\Big(\int\tilde\varphi_\varepsilon\dd F_t-\int\tilde\varphi_\varepsilon\dd f_0\Big)+\Big(\int\tilde\psi_\varepsilon\dd G_t-\int\tilde\psi_\varepsilon\dd g_0\Big).
+\]
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:pot0} and the choice of $y$, $|x-Tx|^2-\psi_\varepsilon(Tx)=\frac1\lambda|Tx-\lambda x|^2+\varepsilon h(Tx)+\varphi_0(x)=m_\varepsilon(\lambda x)+\varphi_0(x)=\varphi_\varepsilon(x)$. Integrating against $f_0$, the coupling $(\mathrm{id},T)_\#f_0$ has cost $\int\varphi_\varepsilon\dd f_0+\int\psi_\varepsilon\dd g_0$, which is at most $W_2(f_0,g_0)^2$ by duality; so equality holds. At time $t$ use duality with $(\varphi_\varepsilon,\psi_\varepsilon)$ and the conservation of $\int\varphi_0\dd F_t$ and $\int\psi_0\dd G_t$.
+\end{proof}
+
+Comparing with Proposition~\ref{prop:master}, the deficit $-\varepsilon\int h\,g_0$ has disappeared. Let $\zeta\in C^\infty(\RR)$ be nondecreasing with $\zeta=0$ on $(-\infty,2]$ and $\zeta=1$ on $[3,\infty)$. For $0<a\le s/(4\lambda)$ put $\zeta_\pm(y)=\zeta(|y\mp se|/(\lambda a))$, and define
+\begin{equation}\label{eq:flat}
+h_a=\zeta_+\zeta_-\,\hB,\qquad h^L_a=\zeta_+\zeta_-\,\hL+\theta_0\big((1-\zeta_+)|y-se|^2+(1-\zeta_-)|y+se|^2\big).
+\end{equation}
+
+\begin{lemma}\label{lem:flat}
+Both functions are smooth, even and nonnegative, with bounded derivatives of all orders. Moreover $h_a=0$ and $h^L_a=\theta_0|y\mp se|^2$ on the ball of radius $2\lambda a$ about $\pm se$, while $\|D^2(h_a-\hB)\|_\infty\le Ca^6$ and $\|D^2(h^L_a-\hL)\|_\infty\le Ca$, with $C$ independent of $a$. If $A_2<\infty$, then $J_a\to J$ and $I_a\to I$ as $a\to0$, where $J_a,I_a$ are defined by \eqref{eq:J} with $h_a$ in place of $\hB$.
+\end{lemma}
+
+\begin{proof}
+Since $3\lambda a<s$, the two balls of radius $3\lambda a$ about $\pm se$ are disjoint, $\zeta_-=1$ on the first and $\zeta_+=1$ on the second, and both functions coincide with $\hB$, resp.\ $\hL$, outside them. On the first ball $h_a-\hB=(\zeta_+-1)\hB$. Since $\hB$ is $|y-se|^8$ times a smooth function, $|D^j\hB(y)|\le C|y-se|^{8-j}$ there, while $|D^j\zeta_+|\le C(\lambda a)^{-j}$; Leibniz's rule gives $|D^2(h_a-\hB)|\le C(\lambda a)^6$, and in the same way $|\nabla h_a(y)|\le C|y-se|^7$. Near $se$, $\vartheta(|y-se|^2)=|y-se|^2(1+O(|y-se|^2))$ and $\vartheta(|y+se|^2)=\theta_0+O(|y-se|)$, so $\hL=\theta_0|y-se|^2+|y-se|^2g$ with $g$ smooth and $g(se)=0$; then $h^L_a-\hL=(1-\zeta_+)|y-se|^2g$ has $|D^2(h^L_a-\hL)|\le C\lambda a$. Nonnegativity and evenness are clear, and the values on the inner balls follow from $\zeta_\pm=0$ there. Finally $h_a(s\sigma)\to\hB(s\sigma)$ and $\nabla h_a(s\sigma)\to\nabla\hB(s\sigma)$ for $\sigma\ne\pm e$, with $h_a(s\sigma)\le\hB(s\sigma)\le16s^8(1-e\cdot\sigma)$ and $|\nabla h_a(s\sigma)|^2\le C(1-e\cdot\sigma)$ for $e\cdot\sigma\ge0$, which is where $b$ lives; dominated convergence gives $J_a\to J$ and $I_a\to I$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:C}]
+Let $\varepsilon=\varepsilon_*$. By Lemma~\ref{lem:flat} there is $a\in(0,s/(4\lambda)]$ with $\|D^2h_a\|_\infty\le2\|D^2\hB\|_\infty$, so that $\varepsilon\le(\lambda\|D^2h_a\|_\infty)^{-1}$, and such that, by the proof of Proposition~\ref{prop:gain} with $h_a$ in place of $\hB$,
+\[
+\Gamma^a:=\Lambda^\star_{\tilde\varphi}(r)+\Lambda^\star_{\tilde\psi}(s)\ge2^{\gamma-1}\Big(\varepsilon(r^\gamma-s^\gamma)J_a-\tfrac12\varepsilon^2\lambda r^\gamma I_a\Big)\ge\tfrac78\Gamma ,
+\]
+where $\tilde\varphi=m_\varepsilon(\lambda\,\cdot)$ and $\tilde\psi=-\varepsilon h_a$ are built from $h_a$; indeed the middle expression tends to $2^{\gamma-1}(\varepsilon(r^\gamma-s^\gamma)J-\frac12\varepsilon^2\lambda r^\gamma I)\ge\Gamma$ because $\varepsilon\le(r^\gamma-s^\gamma)J/(\lambda r^\gamma I)$. The integrals defining $\Lambda^\star$ converge absolutely, because $\tilde\varphi(r\sigma)$ and $\tilde\psi(s\sigma)$ vanish for $\sigma$ near $\pm e$. By Lemma~\ref{lem:smooth}, $\tilde\varphi,\tilde\psi$ are even and lie in $C^2_b$.
+
+Since $h_a\ge0$ vanishes on the ball of radius $2\lambda a$ about $\pm se$, the minimiser there is $y(z)=z$, so $m_\varepsilon=0$ on that ball, $\tilde\varphi=0$ on the ball of radius $2a$ about $\pm re$, $\tilde\psi=0$ on the ball of radius $2\lambda a$ about $\pm se$, and $T(x)=\lambda x$ on the ball of radius $2a$ about $\pm re$. Let $\delta\le a$. Then $j^{\lambda\delta}_s=T_\#j^\delta_r$, and Lemma~\ref{lem:matched} with condition~(c) of Definition~\ref{def:weak} gives
+\begin{equation}\label{eq:finalC}
+W_2(F_t,G_t)^2-W_2(f_0,g_0)^2\ge\int_0^t\big(\Lambda_{\tilde\varphi}(F_\tau)+\Lambda_{\tilde\psi}(G_\tau)\big)\dd\tau .
+\end{equation}
+
+\emph{The gain at time zero.} Decompose $\Lambda_{\tilde\varphi}(f_0)$ as in \eqref{eq:split}. If $v,v_*$ lie in the ball of radius $\delta$ about $re$, then $v',v'_*$ lie in the ball of radius $\sqrt2\delta<2a$ (proof of Lemma~\ref{lem:dirac}), where $\tilde\varphi$ and $\nabla\tilde\varphi$ vanish; so $L_{\tilde\varphi}(v,v_*)=0$ by \eqref{eq:LphiA2}, and the self-terms vanish identically. The same holds about $-re$, and for $g_0$ and $\tilde\psi$. The cross terms tend to $\frac14L_{\tilde\varphi}(re,-re)=\Lambda^\star_{\tilde\varphi}(r)$ and $\Lambda^\star_{\tilde\psi}(s)$ by Lemma~\ref{lem:conv}(i) and the computation in the proof of Lemma~\ref{lem:dirac}, which applies because the gradients vanish at the jets. Choose $\delta_1\le a$ with $\Lambda_{\tilde\varphi}(f_0)+\Lambda_{\tilde\psi}(g_0)\ge\frac34\Gamma$ for $\delta\le\delta_1$.
+
+\emph{Continuity.} Fix $\delta\le\delta_1$ and solutions $F,G$. By Lemma~\ref{lem:tau} there is $t_1>0$ with $\Lambda_{\tilde\varphi}(F_\tau)+\Lambda_{\tilde\psi}(G_\tau)\ge\frac12\Gamma$ for $\tau\le t_1$, and \eqref{eq:finalC} gives the claim.
+\end{proof}
+
+Collisions inside one jet are frequent when $\gamma<0$ and are not even integrable without cutoff, but they keep the colliding particles inside the ball where the certificate vanishes, so they contribute nothing. This is what makes the soft potentials without cutoff accessible.
+
+\begin{proof}[Proof of Theorem~\ref{thm:D}]
+Let $\varepsilon=\varepsilon_L$ and choose $a\in(0,s/(4\lambda)]$ with $\|D^2h^L_a\|_\infty\le2\|D^2\hL\|_\infty$ (Lemma~\ref{lem:flat}). Let $\tilde\varphi,\tilde\psi$ be built from $h=h^L_a$. On the ball of radius $2\lambda a$ about $se$, $\nabla h(y)=2\theta_0(y-se)$, and the point $y=se+(z-se)/(1+\varepsilon\lambda\theta_0)$ lies in that ball and solves $y+\frac{\varepsilon\lambda}2\nabla h(y)=z$; it is therefore the minimiser $y(z)$, and
+\[
+m_\varepsilon(z)=\frac{\varepsilon\theta_0}{1+\varepsilon\lambda\theta_0}|z-se|^2,\qquad T(x)=se+c\,(x-re)\qquad(|x-re|<2a),
+\]
+with $c=\lambda/(1+\varepsilon\lambda\theta_0)$; the same holds about $-se$ by evenness. Hence $\tilde\varphi(x)=\frac{\varepsilon\lambda^2\theta_0}{1+\varepsilon\lambda\theta_0}|x\mp re|^2$ near $\pm re$, $\tilde\psi(y)=-\varepsilon\theta_0|y\mp se|^2$ near $\pm se$, and $T_\#j^\delta_r=j^{c\delta}_s$ for $\delta\le a$. Lemma~\ref{lem:matched} gives \eqref{eq:finalC} with $\Lambda^L$.
+
+Near each jet the certificates coincide with combinations of the collision invariants $1$, $v_i$, $|v|^2$, for which $K$ vanishes identically ($K_{|v|^2}=8|z|^{\gamma+2}-8|z|^{\gamma+2}=0$). Since $K_\varphi(v,w)$ involves only derivatives of $\varphi$ at $v$ and $w$, all self-terms vanish. The cross terms tend, as in the proof of Lemma~\ref{lem:diracL}, to quantities that involve only $\nabla$ and $D^2$ of the certificates at $\pm re$ and $\pm se$. These are the same as for $\hL$, because $h^L_a$ and $\hL$ agree to second order at $\pm se$; so the computation in the proof of Theorem~\ref{thm:B} shows that $\Lambda^L_{\tilde\varphi}(f_0)+\Lambda^L_{\tilde\psi}(g_0)\to\Gamma_L$ as $\delta\to0$, and $\Gamma_L>0$ since $r^\gamma>s^\gamma$. That computation uses only the continuity of $K$ away from the diagonal, which holds for every $\gamma$. Lemma~\ref{lem:tau} finishes the proof as before.
+\end{proof}
+
+For the Landau equation a certificate that vanishes near the jets would see nothing, because the operator is local; the quadratic plateau keeps the transverse curvature that produces the gain while making the jets invisible to themselves.
+
+\subsection{The distance to equilibrium}\label{sec:equilibrium}
+Let $M(v)=(2\pi)^{-3/2}e^{-|v|^2/2}$, the equilibrium of every solution with mass $1$, momentum $0$ and energy $\int|v|^2f=3$. Now there is one gas and one clock, and the comparison behind Theorems~\ref{thm:A}--\ref{thm:D} is not available. Near $M$ the question reduces to the sign of a quadratic form. For $w\in C^\infty_c(\RR^3)$ put $\mathcal Aw=-\Delta w+v\cdot\nabla w$, so that $\operatorname{div}(M\nabla w)=-M\mathcal Aw$, and
+\begin{equation}\label{eq:S}
+S(w)=\frac12\iint\ell_w(v,v_*)\,M(v)M(v_*)\big(\mathcal Aw(v)+\mathcal Aw(v_*)\big)\dd v\dd v_* ,
+\end{equation}
+which converges absolutely because $|\ell_w(v,v_*)|\le C_w|v-v_*|^{\gamma+2}$ (Lemmas~\ref{lem:conv} and~\ref{lem:K}). It is the derivative at $\varepsilon=0$ of $\Lambda_w(M+\varepsilon M\mathcal Aw)$; formally $S(w)=\int w\,\mathcal L(M\mathcal Aw)$, where $\mathcal Lg=Q(M,g)+Q(g,M)$ is the linearised collision operator. Thus $S$ compares the dissipation of $\mathcal L$ with the Ornstein--Uhlenbeck operator $\mathcal A$, which carries the metric of $W_2$ near $M$.\footnote{For a density $M(1+h)$ close to $M$, $W_2(M(1+h),M)^2$ is to leading order $\int M|\nabla\chi|^2$, where $\mathcal A\chi=h$.}
+
+\begin{proposition}\label{prop:eq}
+Consider \eqref{eq:B} with $\gamma>-3$, the value $\gamma=0$ included, and $A_2<\infty$, or \eqref{eq:L} with $\gamma\ge-3$. Let $w\in C^\infty_c(\RR^3)$ be even, with $\int w\,(|v|^2-3)M\dd v=0$ and $S(w)>0$. For every sufficiently small $\varepsilon>0$ there is a smooth probability density $f_0$ with momentum $0$ and energy $3$, equal to $(1+\kappa)^{-3}M(v/(1+\kappa))$ outside a compact set for some $|\kappa|\le C\varepsilon^2$ and with $W_2(f_0,M)\le C\varepsilon$, such that every conservative weak solution $F$ with $F_0=f_0$ satisfies, for some $t_1>0$,
+\[
+W_2(F_t,M)^2\ \ge\ W_2(f_0,M)^2+\varepsilon^2S(w)\,t\qquad(0\le t\le t_1).
+\]
+Such solutions exist for $\gamma>-2$, $\gamma\ne0$ (Proposition~\ref{prop:exist}), for \eqref{eq:L} with $-3\le\gamma\le-2$ \cite[Theorem~1.2]{GS25}, and for \eqref{eq:B} with $-3<\gamma\le-2$ under the hypotheses of \cite[Theorems~1.2 and~1.6]{ISV25}.
+\end{proposition}
+
+\begin{proof}
+Put $u(x)=\frac12(1+\kappa)|x|^2+\varepsilon w(x)$. If $|\kappa|\le\frac14$ and $\varepsilon\|D^2w\|_\infty\le\frac14$, then $D^2u\ge\frac12I$, so $\nabla u$ is a diffeomorphism of $\RR^3$ that equals $(1+\kappa)x$ outside the support of $w$. Let $f_0=(\nabla u)_\#M$. Since $w$ is even, $\nabla w$ is odd and $\int\nabla u\dd M=0$. Since $\operatorname{div}(xM)=(3-|x|^2)M$, we have $\int x\cdot\nabla w\,M=\int w(|x|^2-3)M=0$, so the energy of $f_0$ is $3(1+\kappa)^2+\varepsilon^2\int|\nabla w|^2M$; we choose $\kappa=(1-\frac13\varepsilon^2\int|\nabla w|^2M)^{1/2}-1$. By the change of variables formula $f_0=M(\nabla u^*)\det D^2u^*$, where $u^*$ is the Legendre transform of $u$, and $W_2(f_0,M)^2\le\int|\nabla u-x|^2\dd M\le C\varepsilon^2$.
+
+Put $\psi(x)=|x|^2-2u(x)$ and $\varphi(y)=|y|^2-2u^*(y)$. The Fenchel--Young inequality $u(x)+u^*(y)\ge x\cdot y$, with equality for $y=\nabla u(x)$, gives $\varphi(y)+\psi(x)\le|x-y|^2$, with equality on the graph of $\nabla u$. As in Lemma~\ref{lem:matched}, $W_2(f_0,M)^2=\int\varphi\dd f_0+\int\psi\dd M$ and $W_2(F_t,M)^2\ge\int\varphi\dd F_t+\int\psi\dd M$. Outside a compact set $u^*(y)=|y|^2/(2(1+\kappa))$, so $\varphi=\frac{\kappa}{1+\kappa}|y|^2+\varphi_b$ with $\varphi_b\in C^\infty_c$. Since $F$ conserves energy, condition~(c) of Definition~\ref{def:weak} gives
+\begin{equation}\label{eq:eqgain}
+W_2(F_t,M)^2-W_2(f_0,M)^2\ge\int_0^t\Lambda_{\varphi_b}(F_\tau)\dd\tau .
+\end{equation}
+
+The implicit function theorem, applied to $y=(1+\kappa)x+\varepsilon\nabla w(x)$ with $\kappa=O(\varepsilon^2)$, gives $u^*(y)=\frac{|y|^2}{2(1+\kappa)}-\varepsilon w(y)+\varepsilon^2R_\varepsilon(y)$ and $f_0=M+\varepsilon M\mathcal Aw+\varepsilon^2r_\varepsilon$, where $R_\varepsilon$ is bounded in $C^2$ and supported in a fixed compact set, and $|r_\varepsilon(y)|\le C\jb{y}^2e^{-|y|^2/4}$. Hence $\varphi_b=2\varepsilon w-2\varepsilon^2R_\varepsilon$. The functional $\Lambda_\varphi(\mu)$ is quadratic in $\mu$ and linear in $\varphi$, and $\frac12\iint|\ell_\varphi||f||g_*|\le C\|D^2\varphi\|_\infty$ for $|f|,|g|\le C\jb{v}^2e^{-|v|^2/4}$, because $\gamma+2>-3$. Moreover $\Lambda_\varphi(M)=0$ for every $\varphi\in C^2_b$: for bounded $b$ because the involution $(v,v_*,\sigma)\mapsto(v',v'_*,k)$ preserves $B\,M(v)M(v_*)$, for $A_2<\infty$ by truncating $b$ and using \eqref{eq:taylor2}, and for \eqref{eq:L} because $\nabla M(v)M(v_*)-M(v)\nabla M(v_*)=-M(v)M(v_*)z$ lies in the kernel of $a(z)$. Expanding, and using $\|D^2\varphi_b\|_\infty\le C\varepsilon$,
+\[
+\Lambda_{\varphi_b}(f_0)=\frac\varepsilon2\iint\ell_{\varphi_b}M\,M_*\big(\mathcal Aw+(\mathcal Aw)_*\big)+O(\varepsilon^3)=2\varepsilon^2S(w)+O(\varepsilon^3).
+\]
+Take $\varepsilon$ so small that $\Lambda_{\varphi_b}(f_0)\ge\frac32\varepsilon^2S(w)$. By Lemma~\ref{lem:tau} there is $t_1>0$ with $\Lambda_{\varphi_b}(F_\tau)\ge\varepsilon^2S(w)$ for $\tau\le t_1$, and \eqref{eq:eqgain} gives the claim.
+\end{proof}
+
+For Maxwell molecules, $\gamma=0$, every admissible $w$ has $S(w)\le0$. Indeed, for bounded $b$ the solution of Lemma~\ref{lem:bounded} is a conservative weak solution, and $M$ is a stationary solution, so Tanaka's theorem \cite{Tan78} says that $W_2(f_t,M)$ is nonincreasing, which Proposition~\ref{prop:eq} would contradict if $S(w)>0$; for $A_2<\infty$, $S(w)$ is the limit of the values for $\min\{b,n\}$, by \eqref{eq:taylor2} and dominated convergence. For $\gamma\ne0$ we do not know the sign of $S$. If $S(w)>0$ for one admissible $w$, the distance to equilibrium is not monotone for that kernel; if $S\le0$ for all of them, the linearised equation does not increase the distance to $M$ to leading order.
+
 \section{Remarks}\label{sec:remarks}
 
 \begin{remark}[Maxwell molecules and the two clocks]\label{rem:maxwell}
@@ -493,12 +713,11 @@ If $f$ solves \eqref{eq:B} with kernel \eqref{eq:kernel}, so does $f^{(\lambda)}
 \end{remark}
 
 \begin{remark}[Scope]
-The theorems cover every power-law kernel with $0<\gamma\le2$ whose angular part satisfies \eqref{eq:A1}, with or without cutoff, every kernel with cutoff and bounded angular part for $-3<\gamma<0$, and the Landau equation for $0<\gamma\le1$. Four cases are not covered, and in each the missing ingredient is different.
+Three situations are not settled by the results above.
 \begin{enumerate}
-\item[(a)] \emph{Soft potentials without cutoff, and the Landau equation with $\gamma<0$, including the Coulomb case.} The proof of Theorem~\ref{thm:A}(ii) needs a solution that keeps a jet of width $\delta$ concentrated, with an $L^\infty$ bound of order $\delta^{-3}$, for a time of order $\delta^{2|\gamma|}$. We obtain it from the splitting $Q=Q^+-fLf$ and Lemma~\ref{lem:Qplus}, which require cutoff. Without cutoff, and for the Landau operator, the collision term acts as a diffusion whose strength at the jet is of order $\delta^\gamma$, and a local theory in the norms \eqref{eq:norm} that is uniform in $\delta$ is not available to us.
-\item[(b)] \emph{$\gamma>2$.} The argument of Section~\ref{sec:hard} goes through as soon as solutions exist whose sixth moments are bounded on a time interval independent of $\delta$. For $\gamma>2$ the differential inequality of Lemma~\ref{lem:moments} involves moments of order $4+\gamma>6$ and no longer closes, the estimate of Lemma~\ref{lem:expansion} needs $2\gamma+2\le6$, and the existence theories \cite{MW99,LM12} are stated for $\gamma\le2$.
-\item[(c)] \emph{The Landau equation with $1<\gamma\le2$.} We use the theory of \cite{DV00}, which is stated for $\gamma\le1$. Lemmas~\ref{lem:K}--\ref{lem:smooth} hold for all $\gamma>0$, so the proof of Theorem~\ref{thm:B} applies, with $M_8$ in place of $M_6$, to any weak solutions with the properties listed at the beginning of Section~\ref{sec:landau}.
-\item[(d)] \emph{The distance to equilibrium.} The mechanism of this paper compares two gases running on different clocks. When one of them is the Maxwellian $M$ there is only one clock, and the first variation of $W_2(f_t,M)^2$ is $\Lambda_\phi(f_t)$ for a Kantorovich potential $\phi$ of $(f_t,M)$; we have no control on its sign, and the thin-jet construction gives no information about it.
+\item[(a)] \emph{The distance to equilibrium.} Proposition~\ref{prop:eq} reduces the question near $M$ to the sign of $S$, which is nonpositive for Maxwell molecules and unknown otherwise. Far from $M$ the jets do not help: if $f_0$ is concentrated near finitely many points, the optimal potential on the side of $M$ is unbounded, its $c$-transform equals $-\infty$ away from the points, and the argument of Lemma~\ref{lem:matched} gives no information about mass that collisions carry off the jets.
+\item[(b)] \emph{Very soft kernels, $-3<\gamma\le-2$, with $b$ unbounded and outside the class of \cite{ISV25}.} Theorem~\ref{thm:C} applies to every conservative weak solution, but we do not know that one exists: the moment method of Proposition~\ref{prop:exist} uses the bound $|z|^{\gamma+2}\le1$ near the diagonal, and condition~(b) of Definition~\ref{def:weak} asks for an $L^p$ bound that moment estimates do not give.
+\item[(c)] \emph{Kernels with $A_2=\infty$.} Then $L_\varphi$ is not defined for $\varphi\in C^2_b$ and the weak formulation itself is lost. Such kernels do not come from inverse-power forces.
 \end{enumerate}
 \end{remark}
 
@@ -566,6 +785,22 @@ The map $\Phi$ is smooth, $\Phi-\mathrm{id}$ is bounded with bounded derivatives
 so $m_\varepsilon$ is smooth with bounded derivatives of order at least one, and $0\le m_\varepsilon\le\varepsilon\|h\|_\infty$. If $\nabla h(p)=0$, then $\Phi(p)=p$, so $y(p)=p$, $m_\varepsilon(p)=\varepsilon h(p)$ and $\nabla m_\varepsilon(p)=0$; differentiating $\nabla m_\varepsilon=\varepsilon\nabla h\circ y$ at $p$ gives $D^2m_\varepsilon(p)=\varepsilon D^2h(p)\,D\Phi(p)^{-1}$.
 \end{proof}
 
+\section{Bounded kernels}\label{app:bounded}
+
+\begin{lemma}\label{lem:bounded}
+Let $B=\Phi(|z|)\,\tilde b(k\cdot\sigma)$ with $0\le\Phi\le C_B$ and $0\le\tilde b\le C_B$, and let $f_0$ be a probability density with finite moments of every order. There is a unique nonnegative $f\in C([0,\infty);L^1)$ with $f_t=f_0+\int_0^tQ(f_\tau,f_\tau)\dd\tau$. It conserves mass, momentum and energy, $M_k(f_t)\le M_k(f_0)\,e^{c_kt}$ with $c_k=2^{k/2+3}\pi C_B^2$ for every $k\ge0$, and $\int\varphi f_t=\int\varphi f_0+\int_0^t\Lambda_\varphi(f_\tau)\dd\tau$ for every continuous $\varphi$ with $|\varphi(v)|\le C\jb{v}^k$.
+\end{lemma}
+
+\begin{proof}
+Put $\beta_0=4\pi C_B^2\ge\int B\dd\sigma$ and $Lf(v)=\iint Bf(v_*)\dd\sigma\dd v_*$, so that $Q(f,f)=Q^+(f,f)-f\,Lf$, $\|Lf\|_\infty\le\beta_0\|f\|_{L^1}$ and, by the involution, $\|Q^+(f,g)\|_{L^1}\le\beta_0\|f\|_{L^1}\|g\|_{L^1}$. The Duhamel map of Appendix~\ref{app:soft}, now on the nonnegative functions in $C([0,\tau_0];L^1)$ of norm at most $2$ and with $\tau_0=(16\beta_0)^{-1}$, is a contraction by the same computation, with $L^1$ in place of $\|\cdot\|_\delta$ and $\beta_0$ in place of $C_1\delta^\gamma$. Its fixed point is nonnegative and has mass one, since $\int Q(f,f)=0$; restarting at $\tau_0,2\tau_0,\dots$ gives a global solution, and the same argument gives uniqueness.
+
+For $R>0$ let $\varphi_R=\min\{\jb{v}^k,R\}$. Since $\jb{v'}^2\le\jb{v}^2+\jb{v_*}^2$, we have $\jb{v'}^k\le2^{k/2}(\jb{v}^k+\jb{v_*}^k)$, hence $\varphi_R(v')\le2^{k/2}(\varphi_R(v)+\varphi_R(v_*))$. The integral equation and the involution give
+\[
+\begin{aligned}\frac{\dd}{\dd t}\int\varphi_Rf_t&=\iiint Bf_tf_{t*}\big(\varphi_R(v')-\varphi_R(v)\big)\\&\le2^{k/2}\beta_0\iint f_tf_{t*}\big(\varphi_R(v)+\varphi_R(v_*)\big)=2^{k/2+1}\beta_0\int\varphi_Rf_t ,\end{aligned}
+\]
+and Gronwall's lemma, uniform in $R$, gives the moment bound. With all moments bounded on bounded time intervals, the weak form for $\varphi$ of polynomial growth follows from that for $\min\{\max\{\varphi,-R\},R\}$ by dominated convergence, and the choices $\varphi=v_i$, $|v|^2$ give the conservation laws.
+\end{proof}
+
 \section*{Declarations}
 
 \noindent\textbf{Data availability.} No data were generated or analysed. All results are proved in the text. The \LaTeX\ source and the script that draws the figures, which play no role in the proofs, are available at \url{https://github.com/anaxia-research/j-5}.
@@ -574,7 +809,7 @@ so $m_\varepsilon$ is smooth with bounded derivatives of order at least one, and
 
 \smallskip\noindent\textbf{Conflict of interest.} The author declares no conflict of interest.
 
-\smallskip\noindent\textbf{Acknowledgements.} The question answered here was raised by C.~Villani. The contraction property for Maxwell molecules is due to H.~Tanaka. The existence, uniqueness and moment theory for hard potentials used in Section~\ref{sec:hard} is due to L.~Arkeryd, T.~Elmroth, L.~Desvillettes, B.~Wennberg and S.~Mischler, the notion of measure weak solution used without cutoff to X.~Lu and C.~Mouhot, and the theory of the Landau equation with hard potentials used in Section~\ref{sec:landau} to L.~Desvillettes and C.~Villani.
+\smallskip\noindent\textbf{Acknowledgements.} The question answered here was raised by C.~Villani. The contraction property for Maxwell molecules is due to H.~Tanaka. The existence, uniqueness and moment theory for hard potentials used in Section~\ref{sec:hard} is due to L.~Arkeryd, T.~Elmroth, L.~Desvillettes, B.~Wennberg and S.~Mischler, the notion of measure weak solution used without cutoff to X.~Lu and C.~Mouhot, the theory of the Landau equation with hard potentials used in Section~\ref{sec:landau} to L.~Desvillettes and C.~Villani, the global solutions for very soft potentials used in Theorems~\ref{thm:C} and~\ref{thm:D} to C.~Imbert, L.~Silvestre and C.~Villani, and to N.~Guillen and L.~Silvestre.
 
 \begin{thebibliography}{99}
 
