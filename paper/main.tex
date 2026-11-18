@@ -42,7 +42,7 @@
 \urladdr{https://orcid.org/0000-0003-0466-750X}
 
 \begin{abstract}
-Tanaka's theorem says that two Boltzmann solutions never move apart in the quadratic Wasserstein distance when the molecules are Maxwellian. We prove that this fails for every other power law $|v-v_*|^\gamma$, $\gamma>-3$, with bounded angular kernel, for every other inverse-power force without angular cutoff, and for the Landau equation with every non-Maxwellian power law, the Coulomb case included, answering Villani's question for these interactions.
+Tanaka's theorem says that two Boltzmann solutions never move apart in the quadratic Wasserstein distance when the molecules are Maxwellian. We prove that this fails for every other power law $|v-v_*|^\gamma$, $\gamma>-3$, with bounded angular kernel, for every other inverse-power force without angular cutoff, and for the Landau equation with every non-Maxwellian power law, the Coulomb case included, answering Villani's question for these interactions. For $\gamma>32.2$ even the distance to the Maxwellian can increase.
 
 \medskip\noindent\textbf{Keywords:} Boltzmann equation; Wasserstein distance; Landau equation.
 
@@ -147,6 +147,14 @@ Let $\gamma\ge-3$, $\gamma\ne0$, let $r,s>0$ with $r^\gamma>s^\gamma$, and put $
 
 In Theorem~\ref{thm:D} the second jet is narrower, by the factor $1+\varepsilon_L\lambda\theta_0$, than the dilation of the first; this makes the pair of potentials optimal at time zero. Theorems~\ref{thm:C} and~\ref{thm:D} give up the time scales of Theorems~\ref{thm:A} and~\ref{thm:B}, which are explicit and independent of the solution, in exchange for insensitivity to the singularities of the kernel at grazing collisions and at small relative velocities.
 
+The same certificates, with the Maxwellian $M(v)=(2\pi)^{-3/2}e^{-|v|^2/2}$ in place of the second gas, decide the distance to equilibrium for very hard potentials. Put $\gamma_E=8+4\sqrt{110/3}\approx32.22$.
+
+\begin{mainthm}\label{thm:E}
+Let $\gamma>\gamma_E$, and consider \eqref{eq:B} with any angular kernel satisfying \eqref{eq:A2}, or \eqref{eq:L}. There are smooth probability densities $f_0$, with momentum $0$, energy $3$, Gaussian tails and $W_2(f_0,M)$ as small as we please, such that every conservative weak solution $F$ with $F_0=f_0$ satisfies $W_2(F_t,M)>W_2(f_0,M)$ for $0<t\le t_1$, for some $t_1>0$. Such solutions exist.
+\end{mainthm}
+
+For Maxwell molecules $W_2(f_t,M)$ is nonincreasing by Tanaka's theorem, since $M$ is a stationary solution. For $0<|\gamma|\le\gamma_E$ the question is reduced, near $M$, to the sign of an explicit quadratic form (Proposition~\ref{prop:eq}).
+
 \begin{corollary}\label{cor:no}
 For every kernel \eqref{eq:kernel} with $\gamma>-2$ and $A_2<\infty$, with or without cutoff, for every kernel with $-3<\gamma\le-2$ and bounded $b$, for every inverse-power force other than the Maxwellian one, and for the Landau equation with $\gamma\ge-3$, $\gamma\ne0$, there are two smooth, compactly supported initial data with the same mass and momentum and solutions issued from them with $W_2(f_t,g_t)>W_2(f_0,g_0)$ for some $t>0$. Within the power laws $|v-v_*|^\gamma$, $\gamma>-3$, with bounded angular kernel, the map $t\mapsto W_2(f_t,g_t)$ is nonincreasing for all pairs of solutions exactly when $\gamma=0$.
 \end{corollary}
@@ -165,7 +173,7 @@ The mechanism is a clock mismatch. A pair of opposite jets of speed $\rho$ colli
 \caption{Jet-loss rates $\rho^\gamma$. For $\gamma>0$ the faster jets $\pm re$ break up first; for $\gamma<0$ the slower jets $\pm se$ do. Only for Maxwell molecules are the rates equal, and only then does the dilation remain an optimal transport.}\label{fig:rates}
 \end{figure}
 
-The proof uses Kantorovich duality in its elementary direction\footnote{If $\varphi(x)+\psi(y)\le|x-y|^2$ for all $x,y$, then integrating against any coupling $\pi$ of $\mu$ and $\nu$ gives $\iint|x-y|^2\dd\pi\ge\int\varphi\dd\mu+\int\psi\dd\nu$. No existence of optimal maps or potentials is needed.}: any pair with $\varphi(x)+\psi(y)\le|x-y|^2$ gives $W_2(\mu,\nu)^2\ge\int\varphi\dd\mu+\int\psi\dd\nu$. We perturb the dilation potentials so as to reward the slower gas for keeping its mass at the poles (Section~\ref{sec:dual}, Figure~\ref{fig:cert}), compute the first variation of the reward exactly in the limit of thin jets (Section~\ref{sec:weak}), and control the error by a short-time expansion. For hard potentials the error is controlled by moments and by the cancellation of grazing collisions, uniformly in the angular cutoff, which gives the kernels without cutoff as limits (Section~\ref{sec:hard}). For soft potentials the collision rate inside a jet of width $\delta$ is of order $\delta^\gamma$, which is large; we prove a local theory in norms adapted to the width (Appendix~\ref{app:soft}) and let the time shrink with $\delta$ (Section~\ref{sec:soft}). For the Landau equation collisions are grazing and the first variation sees only second derivatives at the jets, so the certificate must be smooth and curved at the poles (Section~\ref{sec:landau}, Appendix~\ref{app:smooth}). For Theorems~\ref{thm:C} and~\ref{thm:D} the certificate vanishes, or for the Landau equation coincides with a collision invariant, on fixed neighbourhoods of the jets. The initial pair of potentials is then optimal, collisions inside a jet are invisible, and the first variation is continuous along any weak solution; the weak solutions for $\gamma>-2$ come from moment estimates that depend on the angular kernel only through $A_2$ (Section~\ref{sec:exact}, Appendix~\ref{app:bounded}). For the distance to equilibrium we reduce the question near the Maxwellian to the sign of a quadratic form, which is nonpositive for Maxwell molecules (Proposition~\ref{prop:eq}).
+The proof uses Kantorovich duality in its elementary direction\footnote{If $\varphi(x)+\psi(y)\le|x-y|^2$ for all $x,y$, then integrating against any coupling $\pi$ of $\mu$ and $\nu$ gives $\iint|x-y|^2\dd\pi\ge\int\varphi\dd\mu+\int\psi\dd\nu$. No existence of optimal maps or potentials is needed.}: any pair with $\varphi(x)+\psi(y)\le|x-y|^2$ gives $W_2(\mu,\nu)^2\ge\int\varphi\dd\mu+\int\psi\dd\nu$. We perturb the dilation potentials so as to reward the slower gas for keeping its mass at the poles (Section~\ref{sec:dual}, Figure~\ref{fig:cert}), compute the first variation of the reward exactly in the limit of thin jets (Section~\ref{sec:weak}), and control the error by a short-time expansion. For hard potentials the error is controlled by moments and by the cancellation of grazing collisions, uniformly in the angular cutoff, which gives the kernels without cutoff as limits (Section~\ref{sec:hard}). For soft potentials the collision rate inside a jet of width $\delta$ is of order $\delta^\gamma$, which is large; we prove a local theory in norms adapted to the width (Appendix~\ref{app:soft}) and let the time shrink with $\delta$ (Section~\ref{sec:soft}). For the Landau equation collisions are grazing and the first variation sees only second derivatives at the jets, so the certificate must be smooth and curved at the poles (Section~\ref{sec:landau}, Appendix~\ref{app:smooth}). For Theorems~\ref{thm:C} and~\ref{thm:D} the certificate vanishes, or for the Landau equation coincides with a collision invariant, on fixed neighbourhoods of the jets. The initial pair of potentials is then optimal, collisions inside a jet are invisible, and the first variation is continuous along any weak solution; the weak solutions for $\gamma>-2$ come from moment estimates that depend on the angular kernel only through $A_2$ (Section~\ref{sec:exact}, Appendix~\ref{app:bounded}). For the distance to equilibrium the dual pair comes from a convex perturbation of $\frac12|x|^2$, which is exact at time zero for the data it transports from $M$; the first variation is then a quadratic form in the perturbation, built on the linearised collision operator and the Ornstein--Uhlenbeck operator, and an explicit test function makes it positive for $\gamma>\gamma_E$ (Section~\ref{sec:equilibrium}).
 
 \section{Weak form and the thin-jet limit}\label{sec:weak}
 
@@ -704,7 +712,49 @@ The implicit function theorem, applied to $y=(1+\kappa)x+\varepsilon\nabla w(x)$
 Take $\varepsilon$ so small that $\Lambda_{\varphi_b}(f_0)\ge\frac32\varepsilon^2S(w)$. By Lemma~\ref{lem:tau} there is $t_1>0$ with $\Lambda_{\varphi_b}(F_\tau)\ge\varepsilon^2S(w)$ for $\tau\le t_1$, and \eqref{eq:eqgain} gives the claim.
 \end{proof}
 
-For Maxwell molecules, $\gamma=0$, every admissible $w$ has $S(w)\le0$. Indeed, for bounded $b$ the solution of Lemma~\ref{lem:bounded} is a conservative weak solution, and $M$ is a stationary solution, so Tanaka's theorem \cite{Tan78} says that $W_2(f_t,M)$ is nonincreasing, which Proposition~\ref{prop:eq} would contradict if $S(w)>0$; for $A_2<\infty$, $S(w)$ is the limit of the values for $\min\{b,n\}$, by \eqref{eq:taylor2} and dominated convergence. For $\gamma\ne0$ we do not know the sign of $S$. If $S(w)>0$ for one admissible $w$, the distance to equilibrium is not monotone for that kernel; if $S\le0$ for all of them, the linearised equation does not increase the distance to $M$ to leading order.
+For Maxwell molecules, $\gamma=0$, every admissible $w$ has $S(w)\le0$. Indeed, for bounded $b$ the solution of Lemma~\ref{lem:bounded} is a conservative weak solution, and $M$ is a stationary solution, so Tanaka's theorem \cite{Tan78} says that $W_2(f_t,M)$ is nonincreasing, which Proposition~\ref{prop:eq} would contradict if $S(w)>0$; for $A_2<\infty$, $S(w)$ is the limit of the values for $\min\{b,n\}$, by \eqref{eq:taylor2} and dominated convergence. For very hard potentials the sign is reversed by an explicit test function. Let $Q$ be a symmetric traceless $3\times3$ matrix with $Q:Q=1$, and put $Y(v)=v\cdot Qv$ and $\Psi(v)=|v|^2Y(v)$. Since $Y$ is a harmonic quadratic polynomial, $\mathcal AY=2Y$ and $\mathcal A\Psi=4\Psi-14Y$. For polynomials $\phi,\chi$ let
+\[
+\mathcal D(\phi,\chi)=-\frac14\iiint B\,M(v)M(v_*)\,\Delta_\phi\,\Delta_\chi\dd\sigma\dd v\dd v_* ,
+\]
+with $\Delta_\phi=\phi(v')+\phi(v'_*)-\phi(v)-\phi(v_*)$; it converges absolutely when $A_2<\infty$, because $|\Delta_\phi|\le C|v-v_*||\sigma-k|(\jb{v}\jb{v_*})^m$ for some $m$ and $|\sigma-k|^2=2(1-k\cdot\sigma)$. Put
+\[
+\beta_2=\int_{\Sph^2}b(k\cdot\sigma)\big(1-(k\cdot\sigma)^2\big)\dd\sigma\le2A_2,\qquad\kappa=\frac{2^{2+\gamma}\,\Gamma\big(\frac{7+\gamma}2\big)\,\beta_2}{60\sqrt\pi}.
+\]
+
+\begin{lemma}\label{lem:brackets}
+For \eqref{eq:B} with $\gamma>-3$ and $A_2<\infty$,
+\[
+\mathcal D(Y,Y)=-12\kappa,\qquad\mathcal D(Y,\Psi)=-6(\gamma+14)\kappa,\qquad\mathcal D(\Psi,\Psi)=-(3\gamma^2+90\gamma+784)\kappa .
+\]
+\end{lemma}
+
+\begin{proof}
+Use the variables $W=\frac12(v+v_*)$ and $z=v-v_*=rk$, so that $\dd v\dd v_*=\dd W\dd z$, $M(v)M(v_*)=(2\pi)^{-3}e^{-|W|^2}e^{-r^2/4}$, $v,v_*=W\pm\frac r2k$ and $v',v'_*=W\pm\frac r2\sigma$. Since $Y$ is quadratic, $Y(W+\frac u2)+Y(W-\frac u2)=2Y(W)+\frac12Y(u)$, and similarly for $\Psi$; with $T_u=(W\cdot u)(W\cdot Qu)$ and $D=Y(\sigma)-Y(k)$ this gives
+\[
+\Delta_Y=\frac{r^2}2D,\qquad\Delta_\Psi=2\Big(\big(|W|^2+\tfrac{r^2}4\big)\tfrac{r^2}4D+r^2\big(T_\sigma-T_k\big)\Big).
+\]
+Under the weight $\pi^{-3/2}e^{-|W|^2}$ the coordinates of $W$ are independent centred Gaussians of variance $\frac12$, so Isserlis' formula gives $\mathbb E|W|^2=\frac32$, $\mathbb E|W|^4=\frac{15}4$, $\mathbb E\,T_u=\frac12Y(u)$, $\mathbb E\,|W|^2T_u=\frac54Y(u)$ and $\mathbb E\,T_aT_b=\frac14\big(Y(a)Y(b)+(a\cdot b)(Qa\cdot Qb)+(a\cdot Qb)^2\big)$. Next we average over pairs of unit vectors $(k,\sigma)$ with $k\cdot\sigma=x$, distributed invariantly under rotations; then $\mathbb E\,\sigma_i\sigma_lk_jk_m=\frac{2-x^2}{15}\delta_{il}\delta_{jm}+\frac{3x^2-1}{30}(\delta_{ij}\delta_{lm}+\delta_{im}\delta_{jl})$, which gives $\mathbb E\,Y(k)^2=\frac2{15}$, $\mathbb E\,Y(\sigma)Y(k)=\frac{3x^2-1}{15}$, $\mathbb E\,(\sigma\cdot Qk)^2=\frac{3+x^2}{30}$, $\mathbb E\,|Qk|^2=\frac13$ and $\mathbb E\,Q\sigma\cdot Qk=\frac x3$. With $\xi=1-x^2$ we obtain $\mathbb E\,D^2=\frac25\xi$ and $\mathbb E\,(T_\sigma-T_k)^2=\frac{17}{60}\xi$, and then
+\[
+\mathbb E\,\Delta_Y^2=\frac{r^4\xi}{10},\qquad\mathbb E\,\Delta_Y\Delta_\Psi=\frac{r^4\xi}{10}\Big(\frac72+\frac{r^2}4\Big),\qquad\mathbb E\,\Delta_\Psi^2=\frac{r^4\xi}{10}\Big(\frac{301}{12}+\frac{7r^2}4+\frac{r^4}{16}\Big).
+\]
+The weight $b(k\cdot\sigma)$ depends only on $x$, so the angular integration produces $4\pi\beta_2$ times the coefficient of $\xi$. Finally $\int_0^\infty r^{6+\gamma}e^{-r^2/4}\dd r=2^{6+\gamma}\Gamma(\frac{7+\gamma}2)$, and relative to this weight $\mathbb E\,r^2=2(7+\gamma)$ and $\mathbb E\,r^4=4(7+\gamma)(9+\gamma)$. Collecting the constants, $\mathcal D(Y,Y)=-\frac14(2\pi)^{-3}\pi^{3/2}\cdot\frac1{10}\cdot4\pi\beta_2\cdot2^{6+\gamma}\Gamma(\frac{7+\gamma}2)=-12\kappa$, and the other two values follow from $\frac72+\frac14\mathbb E\,r^2=\frac{\gamma+14}2$ and $\frac{301}{12}+\frac74\mathbb E\,r^2+\frac1{16}\mathbb E\,r^4=\frac{3\gamma^2+90\gamma+784}{12}$.
+\end{proof}
+
+The angular kernel enters only through $\beta_2$, which is why the conclusion below holds for every $b$.\footnote{These are the matrix elements that govern the viscosity in the Chapman--Enskog theory, written in the first two Sonine-type functions $Y$ and $|v|^2Y$.}
+
+\begin{proof}[Proof of Theorem~\ref{thm:E}]
+Let $w=Y+t\Psi$. By Lemma~\ref{lem:brackets} and the formulas for $\mathcal AY$ and $\mathcal A\Psi$,
+\[
+\mathcal D(w,\mathcal Aw)=2\mathcal D(Y,Y)+t\big(6\mathcal D(Y,\Psi)-14\mathcal D(Y,Y)\big)+t^2\big(4\mathcal D(\Psi,\Psi)-14\mathcal D(Y,\Psi)\big)=-4\kappa\,q(t),
+\]
+with $q(t)=6+(9\gamma+84)t+(3\gamma^2+69\gamma+490)t^2$. The discriminant of $q$ is $3(3\gamma^2-48\gamma-1568)$, which is positive exactly when $\gamma>\gamma_E$. For such $\gamma$ choose $t=-(9\gamma+84)/(2(3\gamma^2+69\gamma+490))$; then $q(t)<0$ and $\mathcal D(w,\mathcal Aw)>0$.
+
+Let $\chi\in C^\infty_c(\RR^3)$ be radial, equal to $1$ on the unit ball, and $w_R(v)=\chi(v/R)w(v)$. Each $w_R$ is even, and $\int w_R(|v|^2-3)M=0$ because $Y$ is orthogonal to every radial function on each sphere. For $\phi\in C^\infty_c$ and bounded $b$ the identity $S(\phi)=\mathcal D(\phi,\mathcal A\phi)$ follows from \eqref{eq:S} and the involution $(v,v_*,\sigma)\mapsto(v',v'_*,k)$, which preserves $B\,M(v)M(v_*)$ and changes the sign of $\Delta_\phi$; for $A_2<\infty$ it follows by truncating $b$. The derivatives of $w_R$ and of $\mathcal Aw_R$ are bounded by $C\jb{v}^m$ uniformly in $R\ge1$, so the bound on $\Delta_\phi$ above and dominated convergence give $S(w_R)=\mathcal D(w_R,\mathcal Aw_R)\to\mathcal D(w,\mathcal Aw)>0$. Proposition~\ref{prop:eq}, applied with $w_R$ for $R$ large, proves the theorem for \eqref{eq:B}; solutions exist by Proposition~\ref{prop:exist}, since $f_0$ has Gaussian tails.
+
+For \eqref{eq:L}, let $b^{(n)}$ be as in Lemma~\ref{lem:conv}(iii), so that $A_2(b^{(n)})=8$ and $\beta_2(b^{(n)})\to16$. The functions $L^{(n)}_{w_R}$, built on $|z|^\gamma b^{(n)}$, converge to $K_{w_R}$ locally uniformly, by the proof of Lemma~\ref{lem:conv}(iii), and are bounded by $8\|D^2w_R\|_\infty|z|^{\gamma+2}$; hence $S^{(n)}(w_R)\to S_L(w_R)$, where $S_L$ is \eqref{eq:S} with $\ell=K$. The convergence $S^{(n)}(w_R)\to\mathcal D^{(n)}(w,\mathcal Aw)$ as $R\to\infty$ is uniform in $n$, because the domination uses $b^{(n)}$ only through $A_2(b^{(n)})=8$. Since $\mathcal D^{(n)}(w,\mathcal Aw)=-4\kappa_nq(t)$ with $\kappa_n\to2^{2+\gamma}\Gamma(\frac{7+\gamma}2)\cdot16/(60\sqrt\pi)$, we get $S_L(w_R)>0$ for $R$ large, and Proposition~\ref{prop:eq} applies again.
+\end{proof}
+
+For $0<|\gamma|\le\gamma_E$ the two-dimensional family $Y+t\Psi$ gives $S<0$. Larger families of polynomials lower the threshold: for constant $b$ and test functions of the form $p(|v|^2)\,Y$, with $p$ a polynomial, it comes down to about $15$. Near $\gamma=0$, however, $S$ stays negative on every family we have computed, and we do not know whether it is negative for every $w$.
 
 \section{Remarks}\label{sec:remarks}
 
@@ -715,7 +765,7 @@ If $f$ solves \eqref{eq:B} with kernel \eqref{eq:kernel}, so does $f^{(\lambda)}
 \begin{remark}[Scope]
 Three situations are not settled by the results above.
 \begin{enumerate}
-\item[(a)] \emph{The distance to equilibrium.} Proposition~\ref{prop:eq} reduces the question near $M$ to the sign of $S$, which is nonpositive for Maxwell molecules and unknown otherwise. Far from $M$ the jets do not help: if $f_0$ is concentrated near finitely many points, the optimal potential on the side of $M$ is unbounded, its $c$-transform equals $-\infty$ away from the points, and the argument of Lemma~\ref{lem:matched} gives no information about mass that collisions carry off the jets.
+\item[(a)] \emph{The distance to equilibrium for $0<|\gamma|\le\gamma_E$.} Proposition~\ref{prop:eq} reduces the question near $M$ to the sign of $S$, which is nonpositive for Maxwell molecules and takes positive values for $\gamma>\gamma_E$ (Theorem~\ref{thm:E}); in between, and in particular for every inverse-power force, its sign is unknown. Far from $M$ the jets do not help: if $f_0$ is concentrated near finitely many points, the optimal potential on the side of $M$ is unbounded, its $c$-transform equals $-\infty$ away from the points, and the argument of Lemma~\ref{lem:matched} gives no information about mass that collisions carry off the jets.
 \item[(b)] \emph{Very soft kernels, $-3<\gamma\le-2$, with $b$ unbounded and outside the class of \cite{ISV25}.} Theorem~\ref{thm:C} applies to every conservative weak solution, but we do not know that one exists: the moment method of Proposition~\ref{prop:exist} uses the bound $|z|^{\gamma+2}\le1$ near the diagonal, and condition~(b) of Definition~\ref{def:weak} asks for an $L^p$ bound that moment estimates do not give.
 \item[(c)] \emph{Kernels with $A_2=\infty$.} Then $L_\varphi$ is not defined for $\varphi\in C^2_b$ and the weak formulation itself is lost. Such kernels do not come from inverse-power forces.
 \end{enumerate}
